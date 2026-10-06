@@ -96,7 +96,7 @@
             </div>
 
             <!-- Answer Input Form -->
-            <form id="answer-form" onsubmit="checkAnswer(event)" class="space-y-4">
+            <form id="answer-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
                 <input type="text" id="user-input" placeholder="Type Kanji, Kana, or Romaji..." autocomplete="off" class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all text-center text-lg font-medium">
                 <button type="submit" id="submit-btn" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all">
                     Submit Answer
@@ -110,25 +110,35 @@
             </div>
 
             <!-- Next Button Container -->
-            <div id="next-container" class="hidden">
-                <button onclick="nextQuestion()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all">
-                    Next Question <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            <div id="next-container" class="hidden space-y-2">
+                <button onclick="nextQuestion()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                    <span>Next Question</span>
+                    <span class="text-xs opacity-75 font-normal">(or press Enter)</span>
+                    <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
                 </button>
             </div>
         </div>
 
-        <!-- STEP 3: RESULT SCREEN -->
-        <div id="result-screen" class="hidden bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-6">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                <i class="fa-solid fa-trophy"></i>
+        <!-- STEP 3: RESULT SCREEN WITH DETAILED REVIEW -->
+        <div id="result-screen" class="hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900">Test Completed!</h2>
+                    <p id="final-score" class="text-slate-600 mt-1 text-lg font-semibold">You scored 0 out of 0</p>
+                </div>
+                <button onclick="location.reload()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all">
+                    Try Another Test
+                </button>
             </div>
-            <div>
-                <h2 class="text-2xl font-extrabold text-slate-900">Test Completed!</h2>
-                <p id="final-score" class="text-slate-600 mt-1 text-lg">You scored 0 out of 0</p>
+
+            <!-- Detailed Review List -->
+            <div class="space-y-3">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 px-1">Answer Breakdown</h3>
+                <div id="review-list" class="space-y-3"></div>
             </div>
-            <button onclick="location.reload()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all">
-                Try Another Test
-            </button>
         </div>
 
     </main>
@@ -140,6 +150,8 @@
         let matchMode = 'OR';
         let currentIndex = 0;
         let score = 0;
+        let isSubmitted = false;
+        let testResults = [];
 
         document.addEventListener('DOMContentLoaded', async () => {
             try {
@@ -231,17 +243,20 @@
             document.getElementById('test-screen').classList.remove('hidden');
             currentIndex = 0;
             score = 0;
+            testResults = [];
             showQuestion();
         }
 
         function showQuestion() {
+            isSubmitted = false;
             const current = testWords[currentIndex];
             document.getElementById('prompt-english').textContent = current.english;
-            document.getElementById('user-input').value = '';
-            document.getElementById('user-input').disabled = false;
-            document.getElementById('submit-btn').disabled = false;
-            document.getElementById('submit-btn').classList.remove('hidden');
 
+            const input = document.getElementById('user-input');
+            input.value = '';
+            input.readOnly = false;
+
+            document.getElementById('submit-btn').classList.remove('hidden');
             document.getElementById('feedback-panel').classList.add('hidden');
             document.getElementById('next-container').classList.add('hidden');
 
@@ -249,7 +264,16 @@
             document.getElementById('score-text').textContent = `Score: ${score}`;
             document.getElementById('progress-bar').style.width = `${((currentIndex) / testWords.length) * 100}%`;
 
-            setTimeout(() => document.getElementById('user-input').focus(), 100);
+            setTimeout(() => input.focus(), 100);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            if (!isSubmitted) {
+                checkAnswer();
+            } else {
+                nextQuestion();
+            }
         }
 
         function getLevenshteinDistance(a, b) {
@@ -283,18 +307,25 @@
             return getLevenshteinDistance(normInput, normTarget) <= maxDistance;
         }
 
-        function checkAnswer(e) {
-            e.preventDefault();
-            const input = document.getElementById('user-input').value;
-            if (!input.trim()) return;
+        function checkAnswer() {
+            const inputEl = document.getElementById('user-input');
+            const input = inputEl.value.trim();
+            if (!input) return;
+
+            isSubmitted = true;
+            inputEl.readOnly = true;
+            document.getElementById('submit-btn').classList.add('hidden');
 
             const current = testWords[currentIndex];
             const isCorrect = isMatch(input, current.kanji) ||
                               isMatch(input, current.kana) ||
                               isMatch(input, current.romaji);
 
-            document.getElementById('user-input').disabled = true;
-            document.getElementById('submit-btn').classList.add('hidden');
+            testResults.push({
+                word: current,
+                userTyped: input,
+                isCorrect: isCorrect
+            });
 
             const feedbackPanel = document.getElementById('feedback-panel');
             const statusEl = document.getElementById('feedback-status');
@@ -322,12 +353,46 @@
         function nextQuestion() {
             currentIndex++;
             if (currentIndex >= testWords.length) {
-                document.getElementById('test-screen').classList.add('hidden');
-                document.getElementById('result-screen').classList.remove('hidden');
-                document.getElementById('final-score').textContent = `You scored ${score} out of ${testWords.length}!`;
+                renderResults();
             } else {
                 showQuestion();
             }
+        }
+
+        function renderResults() {
+            document.getElementById('test-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('final-score').textContent = `You scored ${score} out of ${testWords.length}!`;
+
+            const list = document.getElementById('review-list');
+            list.innerHTML = '';
+
+            testResults.forEach((res, i) => {
+                const card = document.createElement('div');
+                const correctAnswerStr = `${res.word.kanji || ''} ${res.word.kana ? '(' + res.word.kana + ')' : ''} ${res.word.romaji ? '— ' + res.word.romaji : ''}`;
+
+                if (res.isCorrect) {
+                    card.className = 'p-4 rounded-xl border border-emerald-200 bg-emerald-50/80 text-emerald-900 space-y-1 shadow-sm';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="font-bold text-sm">#${i + 1} Prompt: "${res.word.english}"</span>
+                            <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-emerald-200 text-emerald-800"><i class="fa-solid fa-check"></i> Correct</span>
+                        </div>
+                        <p class="text-xs text-emerald-700">You typed: <strong class="font-semibold">${res.userTyped}</strong></p>
+                    `;
+                } else {
+                    card.className = 'p-4 rounded-xl border border-rose-200 bg-rose-50/80 text-rose-900 space-y-1 shadow-sm';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="font-bold text-sm">#${i + 1} Prompt: "${res.word.english}"</span>
+                            <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-rose-200 text-rose-800"><i class="fa-solid fa-xmark"></i> Incorrect</span>
+                        </div>
+                        <p class="text-xs text-rose-700">You typed: <strong class="line-through">${res.userTyped || '(Empty)'}</strong></p>
+                        <p class="text-xs text-emerald-800">Correct Answer: <strong class="font-semibold">${correctAnswerStr}</strong></p>
+                    `;
+                }
+                list.appendChild(card);
+            });
         }
     </script>
 </body>

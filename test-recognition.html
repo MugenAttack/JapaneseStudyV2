@@ -30,10 +30,23 @@
                 <h1 class="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
                     <i class="fa-solid fa-eye text-blue-600"></i> Recognition Test
                 </h1>
-                <p class="text-slate-500 text-sm mt-1">Select tags and settings to build your customized test batch.</p>
+                <p class="text-slate-500 text-sm mt-1">Select direction, tags, and settings to build your test batch.</p>
             </div>
 
-            <!-- Match Mode -->
+            <!-- Test Direction -->
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-600 uppercase tracking-wider">Test Direction</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" id="dir-en-ja" onclick="setDirection('EN_JA')" class="dir-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all border-blue-600 bg-blue-50 text-blue-700">
+                        English → Japanese
+                    </button>
+                    <button type="button" id="dir-ja-en" onclick="setDirection('JA_EN')" class="dir-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all border-slate-200 bg-slate-50 text-slate-600">
+                        Japanese → English
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tag Logic Mode -->
             <div class="space-y-2">
                 <label class="text-xs font-bold text-slate-600 uppercase tracking-wider">Tag Logic Mode</label>
                 <div class="grid grid-cols-2 gap-3">
@@ -90,9 +103,10 @@
             </div>
 
             <!-- Question Box -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-3">
-                <div id="word-kanji" class="text-4xl sm:text-5xl font-extrabold text-slate-900">日本語</div>
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-2">
+                <div id="word-kanji" class="text-3xl sm:text-4xl font-extrabold text-slate-900">日本語</div>
                 <div id="word-reading" class="text-lg text-slate-500 font-medium">にほんご</div>
+                <div id="word-romaji" class="text-sm text-blue-600 font-semibold tracking-wide">nihongo</div>
             </div>
 
             <!-- Options Grid -->
@@ -106,18 +120,26 @@
             </div>
         </div>
 
-        <!-- STEP 3: RESULT SCREEN -->
-        <div id="result-screen" class="hidden bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-6">
-            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
-                <i class="fa-solid fa-trophy"></i>
+        <!-- STEP 3: RESULT SCREEN WITH DETAILED REVIEW -->
+        <div id="result-screen" class="hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-4">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900">Test Completed!</h2>
+                    <p id="final-score" class="text-slate-600 mt-1 text-lg font-semibold">You scored 0 out of 0</p>
+                </div>
+                <button onclick="location.reload()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all">
+                    Try Another Test
+                </button>
             </div>
-            <div>
-                <h2 class="text-2xl font-extrabold text-slate-900">Test Completed!</h2>
-                <p id="final-score" class="text-slate-600 mt-1 text-lg">You scored 0 out of 0</p>
+
+            <!-- Detailed Review List -->
+            <div class="space-y-3">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 px-1">Answer Breakdown</h3>
+                <div id="review-list" class="space-y-3"></div>
             </div>
-            <button onclick="location.reload()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all">
-                Try Another Test
-            </button>
         </div>
 
     </main>
@@ -127,8 +149,10 @@
         let testWords = [];
         let selectedTags = new Set();
         let matchMode = 'OR';
+        let testDirection = 'EN_JA'; // 'EN_JA' or 'JA_EN'
         let currentIndex = 0;
         let score = 0;
+        let testResults = [];
 
         document.addEventListener('DOMContentLoaded', async () => {
             try {
@@ -178,6 +202,12 @@
             document.getElementById('mode-and').className = `mode-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all ${mode === 'AND' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-200 bg-slate-50 text-slate-600'}`;
         }
 
+        function setDirection(dir) {
+            testDirection = dir;
+            document.getElementById('dir-en-ja').className = `dir-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all ${dir === 'EN_JA' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-200 bg-slate-50 text-slate-600'}`;
+            document.getElementById('dir-ja-en').className = `dir-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all ${dir === 'JA_EN' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-200 bg-slate-50 text-slate-600'}`;
+        }
+
         function toggleUseAll(checkbox) {
             const input = document.getElementById('question-count-input');
             input.disabled = checkbox.checked;
@@ -186,6 +216,14 @@
             } else {
                 input.classList.remove('opacity-50', 'bg-slate-100');
             }
+        }
+
+        function formatJapaneseOption(word) {
+            const parts = [];
+            if (word.kanji) parts.push(word.kanji);
+            if (word.kana) parts.push(`(${word.kana})`);
+            if (word.romaji) parts.push(`— ${word.romaji}`);
+            return parts.join(' ') || word.english;
         }
 
         function startTest() {
@@ -220,13 +258,28 @@
             document.getElementById('test-screen').classList.remove('hidden');
             currentIndex = 0;
             score = 0;
+            testResults = [];
             showQuestion();
         }
 
         function showQuestion() {
             const current = testWords[currentIndex];
-            document.getElementById('word-kanji').textContent = current.kanji || current.kana || current.english;
-            document.getElementById('word-reading').textContent = current.kanji ? (current.kana || '') : '';
+            const romajiEl = document.getElementById('word-romaji');
+
+            if (testDirection === 'EN_JA') {
+                document.getElementById('word-kanji').textContent = current.english;
+                document.getElementById('word-reading').textContent = 'Select the correct Japanese match';
+                romajiEl.classList.add('hidden');
+            } else {
+                document.getElementById('word-kanji').textContent = current.kanji || current.kana || current.english;
+                document.getElementById('word-reading').textContent = current.kanji ? (current.kana || '') : '';
+                if (current.romaji) {
+                    romajiEl.textContent = current.romaji;
+                    romajiEl.classList.remove('hidden');
+                } else {
+                    romajiEl.classList.add('hidden');
+                }
+            }
 
             document.getElementById('progress-text').textContent = `Question ${currentIndex + 1} of ${testWords.length}`;
             document.getElementById('score-text').textContent = `Score: ${score}`;
@@ -242,15 +295,30 @@
 
             options.forEach(opt => {
                 const btn = document.createElement('button');
-                btn.className = 'option-btn p-4 rounded-xl border border-slate-200 bg-white text-left font-semibold text-slate-800 hover:border-blue-400 transition-all text-sm shadow-sm';
-                btn.textContent = opt.english;
-                btn.onclick = () => selectOption(btn, opt.english === current.english);
+                btn.className = 'option-btn p-4 rounded-xl border-2 border-slate-300 bg-white text-left font-semibold text-slate-800 hover:border-blue-500 hover:bg-blue-50/50 transition-all text-sm shadow-sm';
+
+                if (testDirection === 'EN_JA') {
+                    btn.textContent = formatJapaneseOption(opt);
+                } else {
+                    btn.textContent = opt.english;
+                }
+
+                btn.onclick = () => selectOption(btn, opt, current);
                 grid.appendChild(btn);
             });
         }
 
-        function selectOption(button, isCorrect) {
+        function selectOption(button, chosenWord, currentWord) {
             document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+            const isCorrect = chosenWord.english === currentWord.english;
+
+            testResults.push({
+                word: currentWord,
+                chosen: testDirection === 'EN_JA' ? formatJapaneseOption(chosenWord) : chosenWord.english,
+                correct: testDirection === 'EN_JA' ? formatJapaneseOption(currentWord) : currentWord.english,
+                isCorrect: isCorrect
+            });
+
             if (isCorrect) {
                 button.className = 'option-btn p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 text-left font-semibold text-sm shadow-sm';
                 score++;
@@ -264,12 +332,47 @@
         function nextQuestion() {
             currentIndex++;
             if (currentIndex >= testWords.length) {
-                document.getElementById('test-screen').classList.add('hidden');
-                document.getElementById('result-screen').classList.remove('hidden');
-                document.getElementById('final-score').textContent = `You scored ${score} out of ${testWords.length}!`;
+                renderResults();
             } else {
                 showQuestion();
             }
+        }
+
+        function renderResults() {
+            document.getElementById('test-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('final-score').textContent = `You scored ${score} out of ${testWords.length}!`;
+
+            const list = document.getElementById('review-list');
+            list.innerHTML = '';
+
+            testResults.forEach((res, i) => {
+                const card = document.createElement('div');
+                const jaParts = [res.word.kanji, res.word.kana ? `(${res.word.kana})` : '', res.word.romaji ? `— ${res.word.romaji}` : ''].filter(Boolean).join(' ');
+                const promptLabel = testDirection === 'EN_JA' ? res.word.english : jaParts;
+
+                if (res.isCorrect) {
+                    card.className = 'p-4 rounded-xl border border-emerald-200 bg-emerald-50/80 text-emerald-900 space-y-1 shadow-sm';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="font-bold text-sm">#${i + 1} Prompt: "${promptLabel}"</span>
+                            <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-emerald-200 text-emerald-800"><i class="fa-solid fa-check"></i> Correct</span>
+                        </div>
+                        <p class="text-xs text-emerald-700">Answer Chosen: <strong class="font-semibold">${res.chosen}</strong></p>
+                    `;
+                } else {
+                    card.className = 'p-4 rounded-xl border border-rose-200 bg-rose-50/80 text-rose-900 space-y-1 shadow-sm';
+                    card.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="font-bold text-sm">#${i + 1} Prompt: "${promptLabel}"</span>
+                            <span class="text-xs px-2 py-0.5 rounded-full font-bold bg-rose-200 text-rose-800"><i class="fa-solid fa-xmark"></i> Incorrect</span>
+                        </div>
+                        <p class="text-xs text-rose-700">You Selected: <strong class="line-through">${res.chosen}</strong></p>
+                        <p class="text-xs text-emerald-800">Correct Answer: <strong class="font-semibold">${res.correct}</strong></p>
+                    `;
+                }
+                list.appendChild(card);
+            });
         }
     </script>
 </body>
