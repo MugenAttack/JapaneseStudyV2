@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recognition Test - Japanese Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-slate-200 bg-white sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 text-slate-600 hover:text-slate-900 font-semibold text-sm">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Portal Home</span>
+            </a>
+            <span class="text-sm font-bold text-slate-700">Recognition Test</span>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-2xl w-full mx-auto px-4 py-8">
+
+        <!-- STEP 1: SETUP SCREEN -->
+        <div id="setup-screen" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+            <div>
+                <h1 class="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-eye text-blue-600"></i> Recognition Test
+                </h1>
+                <p class="text-slate-500 text-sm mt-1">Select tags and settings to build your customized test batch.</p>
+            </div>
+
+            <!-- Match Mode -->
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-600 uppercase tracking-wider">Tag Logic Mode</label>
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" id="mode-or" onclick="setMode('OR')" class="mode-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all border-blue-600 bg-blue-50 text-blue-700">
+                        OR (Match Any Tag)
+                    </button>
+                    <button type="button" id="mode-and" onclick="setMode('AND')" class="mode-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all border-slate-200 bg-slate-50 text-slate-600">
+                        AND (Match All Tags)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tags Filter -->
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <label class="text-xs font-bold text-slate-600 uppercase tracking-wider">Select Tags</label>
+                    <span id="tag-count-label" class="text-xs text-slate-400">All tags selected</span>
+                </div>
+                <div id="tag-container" class="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-2 border border-slate-200 rounded-xl bg-slate-50">
+                    <span class="text-xs text-slate-400">Loading dictionary tags...</span>
+                </div>
+            </div>
+
+            <!-- Typed Question Count -->
+            <div class="space-y-2">
+                <label for="question-count-input" class="text-xs font-bold text-slate-600 uppercase tracking-wider">Question Count</label>
+                <div class="flex items-center gap-3">
+                    <input type="number" id="question-count-input" min="1" value="10" placeholder="e.g. 15" class="w-1/2 px-4 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-slate-800 font-semibold text-sm">
+                    <label class="flex items-center gap-2 cursor-pointer text-sm font-medium text-slate-600 select-none">
+                        <input type="checkbox" id="use-all-toggle" onchange="toggleUseAll(this)" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300">
+                        <span>Use All Matching Words</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Start Button -->
+            <button id="start-btn" onclick="startTest()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                <span>Start Test</span>
+                <i class="fa-solid fa-play text-xs"></i>
+            </button>
+        </div>
+
+        <!-- STEP 2: TEST SCREEN -->
+        <div id="test-screen" class="hidden space-y-6">
+            <!-- Progress Bar -->
+            <div class="space-y-2">
+                <div class="flex justify-between text-xs font-bold text-slate-500">
+                    <span id="progress-text">Question 1 of 10</span>
+                    <span id="score-text">Score: 0</span>
+                </div>
+                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-blue-600 h-full w-0 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <!-- Question Box -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-3">
+                <div id="word-kanji" class="text-4xl sm:text-5xl font-extrabold text-slate-900">日本語</div>
+                <div id="word-reading" class="text-lg text-slate-500 font-medium">にほんご</div>
+            </div>
+
+            <!-- Options Grid -->
+            <div id="options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+            <!-- Next Button Container -->
+            <div id="next-container" class="hidden">
+                <button onclick="nextQuestion()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all">
+                    Next Question <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- STEP 3: RESULT SCREEN -->
+        <div id="result-screen" class="hidden bg-white rounded-2xl border border-slate-200 p-8 shadow-sm text-center space-y-6">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Test Completed!</h2>
+                <p id="final-score" class="text-slate-600 mt-1 text-lg">You scored 0 out of 0</p>
+            </div>
+            <button onclick="location.reload()" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all">
+                Try Another Test
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        let fullDictionary = [];
+        let testWords = [];
+        let selectedTags = new Set();
+        let matchMode = 'OR';
+        let currentIndex = 0;
+        let score = 0;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('dictionary.json', { cache: 'no-cache' });
+                fullDictionary = await res.json();
+                populateTags();
+            } catch (e) {
+                alert('Could not load dictionary.json');
+            }
+        });
+
+        function populateTags() {
+            const allTags = new Set();
+            fullDictionary.forEach(entry => (entry.tags || []).forEach(t => allTags.add(t)));
+            const container = document.getElementById('tag-container');
+            container.innerHTML = '';
+
+            if (allTags.size === 0) {
+                container.innerHTML = `<span class="text-xs text-slate-400">No tags found in dictionary.</span>`;
+                return;
+            }
+
+            allTags.forEach(tag => {
+                const tagBtn = document.createElement('button');
+                tagBtn.type = 'button';
+                tagBtn.className = `tag-btn px-3 py-1 rounded-lg border text-xs font-semibold bg-white border-slate-200 text-slate-600`;
+                tagBtn.textContent = tag;
+                tagBtn.onclick = () => toggleTag(tag, tagBtn);
+                container.appendChild(tagBtn);
+            });
+        }
+
+        function toggleTag(tag, element) {
+            if (selectedTags.has(tag)) {
+                selectedTags.delete(tag);
+                element.className = `tag-btn px-3 py-1 rounded-lg border text-xs font-semibold bg-white border-slate-200 text-slate-600`;
+            } else {
+                selectedTags.add(tag);
+                element.className = `tag-btn px-3 py-1 rounded-lg border text-xs font-semibold bg-blue-600 border-blue-600 text-white`;
+            }
+            document.getElementById('tag-count-label').textContent = selectedTags.size === 0 ? 'All tags selected' : `${selectedTags.size} tags selected`;
+        }
+
+        function setMode(mode) {
+            matchMode = mode;
+            document.getElementById('mode-or').className = `mode-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all ${mode === 'OR' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-200 bg-slate-50 text-slate-600'}`;
+            document.getElementById('mode-and').className = `mode-btn py-2.5 px-4 rounded-xl border text-sm font-semibold transition-all ${mode === 'AND' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-slate-200 bg-slate-50 text-slate-600'}`;
+        }
+
+        function toggleUseAll(checkbox) {
+            const input = document.getElementById('question-count-input');
+            input.disabled = checkbox.checked;
+            if (checkbox.checked) {
+                input.classList.add('opacity-50', 'bg-slate-100');
+            } else {
+                input.classList.remove('opacity-50', 'bg-slate-100');
+            }
+        }
+
+        function startTest() {
+            let filtered = fullDictionary.filter(entry => {
+                const tags = entry.tags || [];
+                if (selectedTags.size === 0) return true;
+                if (matchMode === 'OR') {
+                    return Array.from(selectedTags).some(t => tags.includes(t));
+                } else {
+                    return Array.from(selectedTags).every(t => tags.includes(t));
+                }
+            });
+
+            if (filtered.length === 0) {
+                alert('No words found matching your chosen tag logic!');
+                return;
+            }
+
+            testWords = filtered.sort(() => Math.random() - 0.5);
+
+            const useAll = document.getElementById('use-all-toggle').checked;
+            if (!useAll) {
+                const countVal = parseInt(document.getElementById('question-count-input').value, 10);
+                if (isNaN(countVal) || countVal <= 0) {
+                    alert('Please enter a valid question count.');
+                    return;
+                }
+                testWords = testWords.slice(0, countVal);
+            }
+
+            document.getElementById('setup-screen').classList.add('hidden');
+            document.getElementById('test-screen').classList.remove('hidden');
+            currentIndex = 0;
+            score = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const current = testWords[currentIndex];
+            document.getElementById('word-kanji').textContent = current.kanji || current.kana || current.english;
+            document.getElementById('word-reading').textContent = current.kanji ? (current.kana || '') : '';
+
+            document.getElementById('progress-text').textContent = `Question ${currentIndex + 1} of ${testWords.length}`;
+            document.getElementById('score-text').textContent = `Score: ${score}`;
+            document.getElementById('progress-bar').style.width = `${((currentIndex) / testWords.length) * 100}%`;
+
+            let distractors = fullDictionary.filter(w => w.english !== current.english);
+            distractors = distractors.sort(() => Math.random() - 0.5).slice(0, 3);
+            let options = [current, ...distractors].sort(() => Math.random() - 0.5);
+
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
+            document.getElementById('next-container').classList.add('hidden');
+
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn p-4 rounded-xl border border-slate-200 bg-white text-left font-semibold text-slate-800 hover:border-blue-400 transition-all text-sm shadow-sm';
+                btn.textContent = opt.english;
+                btn.onclick = () => selectOption(btn, opt.english === current.english);
+                grid.appendChild(btn);
+            });
+        }
+
+        function selectOption(button, isCorrect) {
+            document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+            if (isCorrect) {
+                button.className = 'option-btn p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 text-left font-semibold text-sm shadow-sm';
+                score++;
+            } else {
+                button.className = 'option-btn p-4 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-800 text-left font-semibold text-sm shadow-sm';
+            }
+            document.getElementById('score-text').textContent = `Score: ${score}`;
+            document.getElementById('next-container').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            if (currentIndex >= testWords.length) {
+                document.getElementById('test-screen').classList.add('hidden');
+                document.getElementById('result-screen').classList.remove('hidden');
+                document.getElementById('final-score').textContent = `You scored ${score} out of ${testWords.length}!`;
+            } else {
+                showQuestion();
+            }
+        }
+    </script>
+</body>
+</html>
