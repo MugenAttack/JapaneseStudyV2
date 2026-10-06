@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Learning Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-bold bg-gradient-to-r from-red-600 to-rose-500 bg-clip-text text-transparent">
+                    日本語 Hub
+                </span>
+            </div>
+            <div id="stats-badge" class="hidden sm:flex items-center space-x-2 text-xs bg-slate-100 px-3 py-1.5 rounded-full text-slate-600 border border-slate-200">
+                <i class="fa-solid fa-book-bookmark text-red-500"></i>
+                <span id="total-words-count">Loading stats...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 space-y-12">
+
+        <!-- Hero Section -->
+        <section class="text-center py-4 space-y-2">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Study Portal</h1>
+            <p class="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+                Browse your Japanese vocabulary, run recognition and recall drills, build sentences, or practice focus modules.
+            </p>
+        </section>
+
+        <!-- SECTION 1: VOCABULARY -->
+        <section class="space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Vocabulary</h2>
+                    <p class="text-xs text-slate-500">Read-only dictionary reference, quiz testing, and sentence construction drills</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <!-- 1. Dictionary (Read Only) -->
+                <a href="Dictionary.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-red-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="p-2.5 bg-red-50 text-red-600 rounded-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-book-open text-lg"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2 py-0.5 bg-slate-100 text-slate-600 rounded border border-slate-200">Read-Only</span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-red-600 transition-colors">Dictionary Viewer</h3>
+                            <p class="text-xs text-slate-500 mt-1">Search and filter your word library by Kanji, Kana, Romaji, English, or tags.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Browse Dictionary</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- 2. Recognition Test -->
+                <a href="test-recognition.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-blue-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="p-2.5 bg-blue-50 text-blue-600 rounded-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-eye text-lg"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2 py-0.5 bg-blue-100 text-blue-700 rounded">Test</span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Recognition Test</h3>
+                            <p class="text-xs text-slate-500 mt-1">Read Japanese characters (Kanji/Kana) and select the correct English meaning.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Start Test</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- 3. Recall Test -->
+                <a href="test-recall.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-emerald-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="p-2.5 bg-emerald-50 text-emerald-600 rounded-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-brain text-lg"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded">Test</span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Recall Test</h3>
+                            <p class="text-xs text-slate-500 mt-1">Given an English definition, type or recall the matching Japanese reading.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Start Test</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- 4. Sentence Practice -->
+                <a href="practice-sentence.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-purple-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="p-2.5 bg-purple-50 text-purple-600 rounded-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-puzzle-piece text-lg"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2 py-0.5 bg-purple-100 text-purple-700 rounded">Drill</span>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Sentence Practice</h3>
+                            <p class="text-xs text-slate-500 mt-1">Build sentences using 4 random words tagged by topic, time, place, and verb/object.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Start Practice</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: FOCUS -->
+        <section class="space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Focus</h2>
+                    <p class="text-xs text-slate-500">Targeted modules for Japanese numbers, dates, and time readings</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                <!-- Focus 1: Number Practice -->
+                <a href="focus-numbers.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-lg w-fit group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-arrow-down-1-9 text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Number Practice (数字)</h3>
+                            <p class="text-xs text-slate-500 mt-1">Practice numbers, place values (万, 千, 百), and Kanji/Kana conversion.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Open Practice</span>
+                        <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Focus 2: Time Practice -->
+                <a href="focus-time.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-lg w-fit group-hover:scale-110 transition-transform">
+                            <i class="fa-regular fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Time Practice (時間)</h3>
+                            <p class="text-xs text-slate-500 mt-1">Hours (時), minutes (分), relative time, and telling time drills.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Open Practice</span>
+                        <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Focus 3: Days of the Month -->
+                <a href="focus-days.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-lg w-fit group-hover:scale-110 transition-transform">
+                            <i class="fa-regular fa-calendar-days text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Days of the Month (日)</h3>
+                            <p class="text-xs text-slate-500 mt-1">Irregular readings like 1日 (ついたち), 2日 (ふつか), 20日 (はつか), etc.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Open Practice</span>
+                        <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Focus 4: Days of the Week -->
+                <a href="focus-weekdays.html" class="group bg-white hover:bg-slate-50 border border-slate-200 hover:border-indigo-400 rounded-xl p-5 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-lg w-fit group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-calendar-week text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Days of the Week (曜日)</h3>
+                            <p class="text-xs text-slate-500 mt-1">Elemental readings: 月, 火, 水, 木, 金, 土, 日.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-slate-600">
+                        <span>Open Practice</span>
+                        <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>Japanese Custom Learning Environment</p>
+            <p class="text-slate-400">Hosted via GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Inline Loader script to read dictionary stats -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('dictionary.json', { cache: 'no-cache' });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (Array.isArray(data)) {
+                        const countEl = document.getElementById('total-words-count');
+                        const badgeEl = document.getElementById('stats-badge');
+                        if (countEl && badgeEl) {
+                            countEl.textContent = `${data.length} Words Loaded`;
+                            badgeEl.classList.remove('hidden');
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('Index: dictionary.json not loaded yet.');
+            }
+        });
+    </script>
+</body>
+</html>
