@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Practice - 日本語 Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; }
+        .jp-font { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-red-600 to-rose-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                    日本語 Hub
+                </a>
+            </div>
+            <a href="index.html" class="flex items-center space-x-2 text-xs bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full text-slate-600 border border-slate-200 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Portal</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 space-y-8">
+
+        <!-- Page Title & Control Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900">Sentence Component Builder</h1>
+                    <p class="text-xs sm:text-sm text-slate-500">Pick and swap vocabulary components from your loaded dictionary to form sentences</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span id="data-source-badge" class="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full border border-slate-200">
+                    Loading data...
+                </span>
+                <button id="randomize-all-btn" class="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-all duration-200 active:scale-95">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <span>Randomize All</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 4 Component Selection Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- Category 1: Topic / Subject -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 bg-purple-50 text-purple-700 rounded border border-purple-100">Topic / Subject</span>
+                        <i class="fa-solid fa-user text-purple-400 text-xs"></i>
+                    </div>
+                    <div>
+                        <label for="topic-select" class="block text-xs font-medium text-slate-500 mb-1">Select Word:</label>
+                        <select id="topic-select" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </select>
+                    </div>
+                    <!-- Active Word Display Card -->
+                    <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                        <div id="topic-kanji" class="text-2xl font-bold text-slate-900 jp-font min-h-[32px]">---</div>
+                        <div id="topic-kana" class="text-xs text-purple-600 font-medium jp-font mt-1">---</div>
+                        <div id="topic-romaji" class="text-xs text-purple-800 font-mono italic mt-0.5">---</div>
+                        <div id="topic-english" class="text-xs text-slate-500 mt-1">---</div>
+                    </div>
+                </div>
+                <button id="random-topic-btn" class="w-full py-1.5 px-3 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-dice"></i>
+                    <span>Swap Topic</span>
+                </button>
+            </div>
+
+            <!-- Category 2: Time -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 bg-blue-50 text-blue-700 rounded border border-blue-100">Time</span>
+                        <i class="fa-regular fa-clock text-blue-400 text-xs"></i>
+                    </div>
+                    <div>
+                        <label for="time-select" class="block text-xs font-medium text-slate-500 mb-1">Select Word:</label>
+                        <select id="time-select" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </select>
+                    </div>
+                    <!-- Active Word Display Card -->
+                    <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                        <div id="time-kanji" class="text-2xl font-bold text-slate-900 jp-font min-h-[32px]">---</div>
+                        <div id="time-kana" class="text-xs text-blue-600 font-medium jp-font mt-1">---</div>
+                        <div id="time-romaji" class="text-xs text-blue-800 font-mono italic mt-0.5">---</div>
+                        <div id="time-english" class="text-xs text-slate-500 mt-1">---</div>
+                    </div>
+                </div>
+                <button id="random-time-btn" class="w-full py-1.5 px-3 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-dice"></i>
+                    <span>Swap Time</span>
+                </button>
+            </div>
+
+            <!-- Category 3: Place -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded border border-emerald-100">Place</span>
+                        <i class="fa-solid fa-location-dot text-emerald-400 text-xs"></i>
+                    </div>
+                    <div>
+                        <label for="place-select" class="block text-xs font-medium text-slate-500 mb-1">Select Word:</label>
+                        <select id="place-select" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                        </select>
+                    </div>
+                    <!-- Active Word Display Card -->
+                    <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                        <div id="place-kanji" class="text-2xl font-bold text-slate-900 jp-font min-h-[32px]">---</div>
+                        <div id="place-kana" class="text-xs text-emerald-600 font-medium jp-font mt-1">---</div>
+                        <div id="place-romaji" class="text-xs text-emerald-800 font-mono italic mt-0.5">---</div>
+                        <div id="place-english" class="text-xs text-slate-500 mt-1">---</div>
+                    </div>
+                </div>
+                <button id="random-place-btn" class="w-full py-1.5 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-dice"></i>
+                    <span>Swap Place</span>
+                </button>
+            </div>
+
+            <!-- Category 4: Object / Action -->
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                        <span class="text-xs font-semibold px-2 py-0.5 bg-rose-50 text-rose-700 rounded border border-rose-100">Object / Action</span>
+                        <i class="fa-solid fa-bolt text-rose-400 text-xs"></i>
+                    </div>
+                    <div>
+                        <label for="action-select" class="block text-xs font-medium text-slate-500 mb-1">Select Word:</label>
+                        <select id="action-select" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-rose-500">
+                        </select>
+                    </div>
+                    <!-- Active Word Display Card -->
+                    <div class="bg-slate-50 rounded-lg p-3 border border-slate-100">
+                        <div id="action-kanji" class="text-2xl font-bold text-slate-900 jp-font min-h-[32px]">---</div>
+                        <div id="action-kana" class="text-xs text-rose-600 font-medium jp-font mt-1">---</div>
+                        <div id="action-romaji" class="text-xs text-rose-800 font-mono italic mt-0.5">---</div>
+                        <div id="action-english" class="text-xs text-slate-500 mt-1">---</div>
+                    </div>
+                </div>
+                <button id="random-action-btn" class="w-full py-1.5 px-3 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-dice"></i>
+                    <span>Swap Action</span>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>Japanese Custom Learning Environment</p>
+            <p class="text-slate-400">Hosted via GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Main Controller Script -->
+    <script>
+        const CONFIG = {
+            jsonFileName: 'dictionary.json'
+        };
+
+        // Fallback dictionary data if dictionary.json is unavailable
+        const sampleFallbackDictionary = [
+            { id: "1", kanji: "私", kana: "わたし", romaji: "watashi", english: "I / me", tags: ["Topic", "Subject", "Noun", "N5"] },
+            { id: "2", kanji: "友達", kana: "ともだち", romaji: "tomodachi", english: "Friend", tags: ["Topic", "Subject", "Noun", "N5"] },
+            { id: "3", kanji: "今日", kana: "きょう", romaji: "kyou", english: "Today", tags: ["Time", "Noun", "N5"] },
+            { id: "4", kanji: "毎朝", kana: "まいあさ", romaji: "maiasa", english: "Every morning", tags: ["Time", "Noun", "N5"] },
+            { id: "5", kanji: "学校", kana: "がっこう", romaji: "gakkou", english: "School", tags: ["Place", "Noun", "N5"] },
+            { id: "6", kanji: "図書館", kana: "としょかん", romaji: "toshokan", english: "Library", tags: ["Place", "Noun", "N5"] },
+            { id: "7", kanji: "日本語を勉強する", kana: "にほんごをべんきょうする", romaji: "nihongo o benkyou suru", english: "Study Japanese", tags: ["Object", "Action", "Verb", "N5"] },
+            { id: "8", kanji: "コーヒーを飲む", kana: "コーヒーをのむ", romaji: "koohee o nomu", english: "Drink coffee", tags: ["Object", "Action", "Verb", "N5"] }
+        ];
+
+        let fullDictionary = [];
+        const pools = {
+            topic: [],
+            time: [],
+            place: [],
+            action: []
+        };
+
+        const state = {
+            topic: null,
+            time: null,
+            place: null,
+            action: null
+        };
+
+        // Initialization
+        window.addEventListener('DOMContentLoaded', async () => {
+            await loadDictionaryData();
+            setupEventListeners();
+        });
+
+        async function loadDictionaryData() {
+            try {
+                const response = await fetch(CONFIG.jsonFileName, { cache: 'no-cache' });
+                if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+                const data = await response.json();
+                if (Array.isArray(data)) {
+                    fullDictionary = data;
+                    document.getElementById('data-source-badge').innerText = `${CONFIG.jsonFileName} (${data.length} items loaded)`;
+                } else {
+                    throw new Error("Invalid JSON structure");
+                }
+            } catch (error) {
+                console.warn(`Could not load '${CONFIG.jsonFileName}'. Checking localStorage fallback...`, error);
+                const savedData = localStorage.getItem('kotoba_dict');
+                if (savedData) {
+                    try {
+                        fullDictionary = JSON.parse(savedData);
+                        document.getElementById('data-source-badge').innerText = "Loaded Local Cache";
+                    } catch (e) {
+                        fullDictionary = [...sampleFallbackDictionary];
+                        document.getElementById('data-source-badge').innerText = "Loaded Fallback Data";
+                    }
+                } else {
+                    fullDictionary = [...sampleFallbackDictionary];
+                    document.getElementById('data-source-badge').innerText = "Loaded Fallback Data";
+                }
+            }
+
+            categorizeDictionary();
+            populateSelectOptions();
+            randomizeAll();
+        }
+
+        // Categorize dictionary entries by checking tags
+        function categorizeDictionary() {
+            pools.topic = [];
+            pools.time = [];
+            pools.place = [];
+            pools.action = [];
+
+            fullDictionary.forEach(item => {
+                const tags = (item.tags || []).map(t => t.toLowerCase());
+
+                // Categorize Topic / Subject
+                if (tags.some(t => ['topic', 'subject', 'person', 'pronoun', 'people'].includes(t))) {
+                    pools.topic.push(item);
+                }
+                // Categorize Time
+                if (tags.some(t => ['time', 'date', 'day', 'weekday', 'month'].includes(t))) {
+                    pools.time.push(item);
+                }
+                // Categorize Place
+                if (tags.some(t => ['place', 'location', 'building'].includes(t))) {
+                    pools.place.push(item);
+                }
+                // Categorize Object / Action
+                if (tags.some(t => ['object', 'action', 'verb', 'ichidan', 'godan', 'suru'].includes(t))) {
+                    pools.action.push(item);
+                }
+            });
+
+            // Fallback categorization if specific tags aren't present in dictionary entries
+            if (pools.topic.length === 0) pools.topic = fullDictionary.filter(item => (item.tags || []).includes("Noun"));
+            if (pools.time.length === 0) pools.time = [...pools.topic];
+            if (pools.place.length === 0) pools.place = [...pools.topic];
+            if (pools.action.length === 0) pools.action = fullDictionary.filter(item => (item.tags || []).includes("Verb"));
+
+            // If still empty, use full dictionary for all pools
+            if (pools.topic.length === 0) pools.topic = [...fullDictionary];
+            if (pools.time.length === 0) pools.time = [...fullDictionary];
+            if (pools.place.length === 0) pools.place = [...fullDictionary];
+            if (pools.action.length === 0) pools.action = [...fullDictionary];
+        }
+
+        function populateSelectOptions() {
+            populateDropdown('topic-select', pools.topic);
+            populateDropdown('time-select', pools.time);
+            populateDropdown('place-select', pools.place);
+            populateDropdown('action-select', pools.action);
+        }
+
+        function populateDropdown(selectId, items) {
+            const select = document.getElementById(selectId);
+            select.innerHTML = '';
+            items.forEach((item, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                const readingPart = item.kana ? item.kana : '';
+                const romajiPart = item.romaji ? ` (${item.romaji})` : '';
+                const displayText = item.kanji
+                    ? `${item.kanji} - ${readingPart}${romajiPart}`
+                    : `${readingPart}${romajiPart || item.english}`;
+                option.textContent = displayText;
+                select.appendChild(option);
+            });
+        }
+
+        function updateCategory(category, item) {
+            state[category] = item;
+            if (!item) return;
+
+            const displayWord = item.kanji || item.kana || item.romaji || '---';
+            const kanaReading = item.kana || '';
+            const romajiReading = item.romaji ? item.romaji : '';
+
+            document.getElementById(`${category}-kanji`).textContent = displayWord;
+            document.getElementById(`${category}-kana`).textContent = kanaReading;
+            document.getElementById(`${category}-romaji`).textContent = romajiReading;
+            document.getElementById(`${category}-english`).textContent = item.english || '---';
+        }
+
+        function swapCategory(category) {
+            const pool = pools[category];
+            if (!pool || pool.length === 0) return;
+            const randomIndex = Math.floor(Math.random() * pool.length);
+            document.getElementById(`${category}-select`).value = randomIndex;
+            updateCategory(category, pool[randomIndex]);
+        }
+
+        function randomizeAll() {
+            swapCategory('topic');
+            swapCategory('time');
+            swapCategory('place');
+            swapCategory('action');
+        }
+
+        function setupEventListeners() {
+            // Dropdown change listeners
+            document.getElementById('topic-select').addEventListener('change', (e) => {
+                updateCategory('topic', pools.topic[e.target.value]);
+            });
+            document.getElementById('time-select').addEventListener('change', (e) => {
+                updateCategory('time', pools.time[e.target.value]);
+            });
+            document.getElementById('place-select').addEventListener('change', (e) => {
+                updateCategory('place', pools.place[e.target.value]);
+            });
+            document.getElementById('action-select').addEventListener('change', (e) => {
+                updateCategory('action', pools.action[e.target.value]);
+            });
+
+            // Swap button listeners
+            document.getElementById('random-topic-btn').addEventListener('click', () => swapCategory('topic'));
+            document.getElementById('random-time-btn').addEventListener('click', () => swapCategory('time'));
+            document.getElementById('random-place-btn').addEventListener('click', () => swapCategory('place'));
+            document.getElementById('random-action-btn').addEventListener('click', () => swapCategory('action'));
+
+            // Randomize all button
+            document.getElementById('randomize-all-btn').addEventListener('click', randomizeAll);
+        }
+    </script>
+</body>
+</html>
