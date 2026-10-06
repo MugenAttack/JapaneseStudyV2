@@ -33,7 +33,7 @@
     </header>
 
     <!-- Main Content Container -->
-    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 space-y-8">
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 space-y-6">
 
         <!-- Page Title & Control Bar -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
@@ -54,6 +54,22 @@
                     <i class="fa-solid fa-shuffle"></i>
                     <span>Randomize All</span>
                 </button>
+            </div>
+        </div>
+
+        <!-- Filter By Tags Section -->
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 text-xs font-bold text-slate-700 uppercase tracking-wider">
+                    <i class="fa-solid fa-filter text-purple-600"></i>
+                    <span>Filter by Additional Tags (OR Match)</span>
+                </div>
+                <button id="clear-filters-btn" class="text-xs text-slate-400 hover:text-slate-600 transition-colors hidden">
+                    Clear Selected Tags
+                </button>
+            </div>
+            <div id="tag-filters-container" class="flex flex-wrap gap-1.5 text-xs">
+                <span class="text-slate-400 italic text-xs">Extracting tags...</span>
             </div>
         </div>
 
@@ -182,6 +198,14 @@
             jsonFileName: 'dictionary.json'
         };
 
+        // Standard structural category tags to ignore in filter list
+        const CATEGORY_TAGS = [
+            'topic', 'subject', 'person', 'pronoun', 'people',
+            'time', 'date', 'day', 'weekday', 'month',
+            'place', 'location', 'building',
+            'object', 'action', 'verb', 'ichidan', 'godan', 'suru'
+        ];
+
         // Fallback dictionary data if dictionary.json is unavailable
         const sampleFallbackDictionary = [
             { id: "1", kanji: "私", kana: "わたし", romaji: "watashi", english: "I / me", tags: ["Topic", "Subject", "Noun", "N5"] },
@@ -195,6 +219,8 @@
         ];
 
         let fullDictionary = [];
+        let activeFilterTags = new Set();
+
         const pools = {
             topic: [],
             time: [],
@@ -243,19 +269,91 @@
                 }
             }
 
+            renderFilterTags();
             categorizeDictionary();
             populateSelectOptions();
             randomizeAll();
         }
 
-        // Categorize dictionary entries by checking tags
+        // Render filter badges, ignoring structural category tags
+        function renderFilterTags() {
+            const container = document.getElementById('tag-filters-container');
+            container.innerHTML = '';
+
+            const nonCategoryTags = new Map(); // Lowercase -> Original Case
+
+            fullDictionary.forEach(item => {
+                (item.tags || []).forEach(tag => {
+                    const lower = tag.trim().toLowerCase();
+                    if (!CATEGORY_TAGS.includes(lower) && !nonCategoryTags.has(lower)) {
+                        nonCategoryTags.set(lower, tag.trim());
+                    }
+                });
+            });
+
+            if (nonCategoryTags.size === 0) {
+                container.innerHTML = `<span class="text-slate-400 italic text-xs">No additional tags found.</span>`;
+                return;
+            }
+
+            // Sort tags alphabetically
+            const sortedTags = Array.from(nonCategoryTags.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+
+            sortedTags.forEach(([lower, original]) => {
+                const badge = document.createElement('button');
+                badge.className = `px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
+                    activeFilterTags.has(lower)
+                        ? 'bg-purple-600 text-white border-purple-600 shadow-sm'
+                        : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200'
+                }`;
+                badge.textContent = original;
+                badge.addEventListener('click', () => toggleTagFilter(lower));
+                container.appendChild(badge);
+            });
+
+            const clearBtn = document.getElementById('clear-filters-btn');
+            if (activeFilterTags.size > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+        }
+
+        function toggleTagFilter(lowerTag) {
+            if (activeFilterTags.has(lowerTag)) {
+                activeFilterTags.delete(lowerTag);
+            } else {
+                activeFilterTags.add(lowerTag);
+            }
+            renderFilterTags();
+            categorizeDictionary();
+            populateSelectOptions();
+            randomizeAll();
+        }
+
+        document.getElementById('clear-filters-btn').addEventListener('click', () => {
+            activeFilterTags.clear();
+            renderFilterTags();
+            categorizeDictionary();
+            populateSelectOptions();
+            randomizeAll();
+        });
+
+        // Categorize dictionary entries by checking structural tags & active non-category filters
         function categorizeDictionary() {
             pools.topic = [];
             pools.time = [];
             pools.place = [];
             pools.action = [];
 
-            fullDictionary.forEach(item => {
+            // Filter items by active tag selection using OR logic (.some)
+            const filteredDict = fullDictionary.filter(item => {
+                if (activeFilterTags.size === 0) return true;
+                const itemTags = (item.tags || []).map(t => t.toLowerCase());
+                return Array.from(activeFilterTags).some(filterTag => itemTags.includes(filterTag));
+            });
+
+            filteredDict.forEach(item => {
                 const tags = (item.tags || []).map(t => t.toLowerCase());
 
                 // Categorize Topic / Subject
@@ -276,17 +374,16 @@
                 }
             });
 
-            // Fallback categorization if specific tags aren't present in dictionary entries
-            if (pools.topic.length === 0) pools.topic = fullDictionary.filter(item => (item.tags || []).includes("Noun"));
+            // Fallbacks if active filters leave a category empty
+            if (pools.topic.length === 0) pools.topic = filteredDict.filter(item => (item.tags || []).includes("Noun"));
             if (pools.time.length === 0) pools.time = [...pools.topic];
             if (pools.place.length === 0) pools.place = [...pools.topic];
-            if (pools.action.length === 0) pools.action = fullDictionary.filter(item => (item.tags || []).includes("Verb"));
+            if (pools.action.length === 0) pools.action = filteredDict.filter(item => (item.tags || []).includes("Verb"));
 
-            // If still empty, use full dictionary for all pools
-            if (pools.topic.length === 0) pools.topic = [...fullDictionary];
-            if (pools.time.length === 0) pools.time = [...fullDictionary];
-            if (pools.place.length === 0) pools.place = [...fullDictionary];
-            if (pools.action.length === 0) pools.action = [...fullDictionary];
+            if (pools.topic.length === 0) pools.topic = [...filteredDict];
+            if (pools.time.length === 0) pools.time = [...filteredDict];
+            if (pools.place.length === 0) pools.place = [...filteredDict];
+            if (pools.action.length === 0) pools.action = [...filteredDict];
         }
 
         function populateSelectOptions() {
@@ -299,6 +396,14 @@
         function populateDropdown(selectId, items) {
             const select = document.getElementById(selectId);
             select.innerHTML = '';
+
+            if (items.length === 0) {
+                const option = document.createElement('option');
+                option.textContent = "-- No items match tag --";
+                select.appendChild(option);
+                return;
+            }
+
             items.forEach((item, index) => {
                 const option = document.createElement('option');
                 option.value = index;
@@ -314,7 +419,13 @@
 
         function updateCategory(category, item) {
             state[category] = item;
-            if (!item) return;
+            if (!item) {
+                document.getElementById(`${category}-kanji`).textContent = "---";
+                document.getElementById(`${category}-kana`).textContent = "---";
+                document.getElementById(`${category}-romaji`).textContent = "---";
+                document.getElementById(`${category}-english`).textContent = "---";
+                return;
+            }
 
             const displayWord = item.kanji || item.kana || item.romaji || '---';
             const kanaReading = item.kana || '';
@@ -328,7 +439,10 @@
 
         function swapCategory(category) {
             const pool = pools[category];
-            if (!pool || pool.length === 0) return;
+            if (!pool || pool.length === 0) {
+                updateCategory(category, null);
+                return;
+            }
             const randomIndex = Math.floor(Math.random() * pool.length);
             document.getElementById(`${category}-select`).value = randomIndex;
             updateCategory(category, pool[randomIndex]);
@@ -344,16 +458,16 @@
         function setupEventListeners() {
             // Dropdown change listeners
             document.getElementById('topic-select').addEventListener('change', (e) => {
-                updateCategory('topic', pools.topic[e.target.value]);
+                if (pools.topic[e.target.value]) updateCategory('topic', pools.topic[e.target.value]);
             });
             document.getElementById('time-select').addEventListener('change', (e) => {
-                updateCategory('time', pools.time[e.target.value]);
+                if (pools.time[e.target.value]) updateCategory('time', pools.time[e.target.value]);
             });
             document.getElementById('place-select').addEventListener('change', (e) => {
-                updateCategory('place', pools.place[e.target.value]);
+                if (pools.place[e.target.value]) updateCategory('place', pools.place[e.target.value]);
             });
             document.getElementById('action-select').addEventListener('change', (e) => {
-                updateCategory('action', pools.action[e.target.value]);
+                if (pools.action[e.target.value]) updateCategory('action', pools.action[e.target.value]);
             });
 
             // Swap button listeners

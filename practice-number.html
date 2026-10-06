@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Practice - 日本語 Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif; }
+        .jp-font { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-red-600 to-rose-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                    日本語 Hub
+                </a>
+            </div>
+            <a href="index.html" class="flex items-center space-x-2 text-xs bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full text-slate-600 border border-slate-200 transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Portal</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-8 space-y-6">
+
+        <!-- Page Header -->
+        <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-900">Number Reading Practice</h1>
+                    <p class="text-xs sm:text-sm text-slate-500">Test your recall of Japanese numbers using custom numerical ranges</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Range Input Section -->
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-2 text-xs font-bold text-slate-700 uppercase tracking-wider">
+                <i class="fa-solid fa-sliders text-emerald-600"></i>
+                <span>Custom Range:</span>
+            </div>
+
+            <div class="flex items-center space-x-2 text-xs font-medium text-slate-600">
+                <label for="min-range-input" class="sr-only">Minimum Range</label>
+                <input id="min-range-input" type="number" min="0" max="99999998" value="0" class="w-28 px-3 py-1.5 border border-slate-200 rounded-lg bg-slate-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono text-center">
+                <span>to</span>
+                <label for="max-range-input" class="sr-only">Maximum Range</label>
+                <input id="max-range-input" type="number" min="1" max="99999999" value="100" class="w-28 px-3 py-1.5 border border-slate-200 rounded-lg bg-slate-50 text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono text-center">
+                <button id="apply-range-btn" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-sm transition-colors active:scale-95">
+                    Apply
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Card Section -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm flex flex-col items-center justify-center space-y-8 min-h-[360px] text-center relative overflow-hidden">
+
+            <!-- Generated Number Display -->
+            <div>
+                <div class="text-xs uppercase font-bold tracking-widest text-slate-400 mb-2">Target Number</div>
+                <div id="number-display" class="text-6xl sm:text-7xl font-extrabold text-slate-900 font-mono tracking-tight">---</div>
+            </div>
+
+            <!-- Answer Section (Hidden State vs Revealed State) -->
+            <div class="w-full max-w-md">
+
+                <!-- Hidden Placeholder Box -->
+                <div id="answer-placeholder" class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl p-6 text-slate-400 text-sm flex flex-col items-center justify-center space-y-2">
+                    <i class="fa-solid fa-eye-slash text-2xl text-slate-300"></i>
+                    <span>Answer is hidden</span>
+                </div>
+
+                <!-- Revealed Answer Card -->
+                <div id="answer-card" class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-slate-800 space-y-3 hidden transition-all duration-200">
+                    <div class="flex items-center justify-center space-x-2">
+                        <div id="ans-kanji" class="text-3xl font-bold text-emerald-950 jp-font">---</div>
+                        <button id="speak-btn" title="Listen" class="text-emerald-600 hover:text-emerald-800 transition-colors p-1">
+                            <i class="fa-solid fa-volume-high text-lg"></i>
+                        </button>
+                    </div>
+                    <div id="ans-kana" class="text-sm font-medium text-emerald-700 jp-font">---</div>
+                    <div id="ans-romaji" class="text-xs font-mono italic text-emerald-900">---</div>
+                </div>
+
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md pt-2">
+                <button id="toggle-answer-btn" class="w-full sm:w-1/2 py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl shadow-sm transition-all active:scale-95 flex items-center justify-center space-x-2">
+                    <i id="toggle-icon" class="fa-solid fa-eye"></i>
+                    <span id="toggle-label">Show Answer</span>
+                </button>
+                <button id="next-number-btn" class="w-full sm:w-1/2 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-sm transition-all active:scale-95 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    <span>Next Number</span>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-400">Tip: Press <kbd class="px-1.5 py-0.5 bg-slate-100 border border-slate-300 rounded text-slate-600 font-mono">Space</kbd> on your keyboard to reveal/hide or generate a new number.</p>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 mt-auto">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p>Japanese Custom Learning Environment</p>
+            <p class="text-slate-400">Hosted via GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Controller Script -->
+    <script>
+        let minRange = 0;
+        let maxRange = 100;
+        let currentNumber = 0;
+        let isRevealed = false;
+        let currentJapanese = { kanji: '', kana: '', romaji: '' };
+
+        const basicDigits = [
+            { kanji: '零', kana: 'れい', romaji: 'rei' },
+            { kanji: '一', kana: 'いち', romaji: 'ichi' },
+            { kanji: '二', kana: 'に', romaji: 'ni' },
+            { kanji: '三', kana: 'さん', romaji: 'san' },
+            { kanji: '四', kana: 'よん', romaji: 'yon' },
+            { kanji: '五', kana: 'ご', romaji: 'go' },
+            { kanji: '六', kana: 'ろく', romaji: 'roku' },
+            { kanji: '七', kana: 'なな', romaji: 'nana' },
+            { kanji: '八', kana: 'はち', romaji: 'hachi' },
+            { kanji: '九', kana: 'きゅう', romaji: 'kyuu' }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setupEventListeners();
+            generateNewNumber();
+        });
+
+        function setupEventListeners() {
+            // Range Inputs Apply
+            document.getElementById('apply-range-btn').addEventListener('click', updateRangeValues);
+
+            // Trigger Range update when pressing Enter inside inputs
+            document.getElementById('min-range-input').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') updateRangeValues();
+            });
+            document.getElementById('max-range-input').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') updateRangeValues();
+            });
+
+            // Toggle Answer
+            document.getElementById('toggle-answer-btn').addEventListener('click', toggleAnswer);
+
+            // Next Number
+            document.getElementById('next-number-btn').addEventListener('click', generateNewNumber);
+
+            // TTS Audio Button
+            document.getElementById('speak-btn').addEventListener('click', () => {
+                if ('speechSynthesis' in window && currentJapanese.kana) {
+                    const utterance = new SpeechSynthesisUtterance(currentJapanese.kana);
+                    utterance.lang = 'ja-JP';
+                    window.speechSynthesis.speak(utterance);
+                }
+            });
+
+            // Keyboard Shortcuts
+            window.addEventListener('keydown', (e) => {
+                // Ignore spacebar if user is typing in input fields
+                if (e.target.tagName === 'INPUT') return;
+
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    if (!isRevealed) {
+                        toggleAnswer();
+                    } else {
+                        generateNewNumber();
+                    }
+                }
+            });
+        }
+
+        function updateRangeValues() {
+            let minVal = parseInt(document.getElementById('min-range-input').value) || 0;
+            let maxVal = parseInt(document.getElementById('max-range-input').value) || 0;
+
+            // Clamp bounds
+            minVal = Math.max(0, minVal);
+            maxVal = Math.max(minVal + 1, maxVal);
+
+            minRange = minVal;
+            maxRange = maxVal;
+
+            document.getElementById('min-range-input').value = minRange;
+            document.getElementById('max-range-input').value = maxRange;
+
+            generateNewNumber();
+        }
+
+        function generateNewNumber() {
+            currentNumber = Math.floor(Math.random() * (maxRange - minRange + 1)) + minRange;
+            document.getElementById('number-display').textContent = currentNumber.toLocaleString();
+            currentJapanese = convertNumberToJapanese(currentNumber);
+
+            // Reset UI state to hidden
+            isRevealed = false;
+            document.getElementById('answer-placeholder').classList.remove('hidden');
+            document.getElementById('answer-card').classList.add('hidden');
+            document.getElementById('toggle-label').textContent = "Show Answer";
+            document.getElementById('toggle-icon').className = "fa-solid fa-eye";
+        }
+
+        function toggleAnswer() {
+            isRevealed = !isRevealed;
+            if (isRevealed) {
+                document.getElementById('ans-kanji').textContent = currentJapanese.kanji;
+                document.getElementById('ans-kana').textContent = currentJapanese.kana;
+                document.getElementById('ans-romaji').textContent = currentJapanese.romaji;
+
+                document.getElementById('answer-placeholder').classList.add('hidden');
+                document.getElementById('answer-card').classList.remove('hidden');
+                document.getElementById('toggle-label').textContent = "Hide Answer";
+                document.getElementById('toggle-icon').className = "fa-solid fa-eye-slash";
+            } else {
+                document.getElementById('answer-placeholder').classList.remove('hidden');
+                document.getElementById('answer-card').classList.add('hidden');
+                document.getElementById('toggle-label').textContent = "Show Answer";
+                document.getElementById('toggle-icon').className = "fa-solid fa-eye";
+            }
+        }
+
+        // Japanese Number Conversion Algorithm (0 - 99,999,999)
+        function convertNumberToJapanese(num) {
+            if (num === 0) return { kanji: "零", kana: "れい", romaji: "rei" };
+
+            let kanjiRes = "";
+            let kanaRes = [];
+            let romajiRes = [];
+
+            // Break into 4-digit chunks for Myriads (万)
+            const chunks = [];
+            let temp = num;
+            while (temp > 0) {
+                chunks.push(temp % 10000);
+                temp = Math.floor(temp / 10000);
+            }
+
+            const chunkUnitsKanji = ['', '万', '億'];
+            const chunkUnitsKana = ['', 'まん', 'おく'];
+            const chunkUnitsRomaji = ['', 'man', 'oku'];
+
+            for (let i = chunks.length - 1; i >= 0; i--) {
+                const chunk = chunks[i];
+                if (chunk === 0) continue;
+
+                const parsed = parseFourDigits(chunk);
+                kanjiRes += parsed.kanji + chunkUnitsKanji[i];
+
+                kanaRes.push(...parsed.kana);
+                if (chunkUnitsKana[i]) kanaRes.push(chunkUnitsKana[i]);
+
+                romajiRes.push(...parsed.romaji);
+                if (chunkUnitsRomaji[i]) romajiRes.push(chunkUnitsRomaji[i]);
+            }
+
+            return {
+                kanji: kanjiRes,
+                kana: kanaRes.join(' '),
+                romaji: romajiRes.join(' ')
+            };
+        }
+
+        // Helper to convert numbers 1 to 9999
+        function parseFourDigits(val) {
+            let kanji = "";
+            let kana = [];
+            let romaji = [];
+
+            const th = Math.floor(val / 1000);
+            const hu = Math.floor((val % 1000) / 100);
+            const te = Math.floor((val % 100) / 10);
+            const un = val % 10;
+
+            // Thousands (千)
+            if (th > 0) {
+                if (th === 3) {
+                    kanji += "三千"; kana.push("さんぜん"); romaji.push("sanzen");
+                } else if (th === 8) {
+                    kanji += "八千"; kana.push("はっせん"); romaji.push("hassen");
+                } else if (th === 1) {
+                    kanji += "千"; kana.push("せん"); romaji.push("sen");
+                } else {
+                    kanji += basicDigits[th].kanji + "千";
+                    kana.push(basicDigits[th].kana + "せん");
+                    romaji.push(basicDigits[th].romaji + "sen");
+                }
+            }
+
+            // Hundreds (百)
+            if (hu > 0) {
+                if (hu === 3) {
+                    kanji += "三百"; kana.push("さんびゃく"); romaji.push("sanbyaku");
+                } else if (hu === 6) {
+                    kanji += "六百"; kana.push("ろっぴゃく"); romaji.push("roppyaku");
+                } else if (hu === 8) {
+                    kanji += "八百"; kana.push("はっぴゃく"); romaji.push("happyaku");
+                } else if (hu === 1) {
+                    kanji += "百"; kana.push("ひゃく"); romaji.push("hyaku");
+                } else {
+                    kanji += basicDigits[hu].kanji + "百";
+                    kana.push(basicDigits[hu].kana + "ひゃく");
+                    romaji.push(basicDigits[hu].romaji + "hyaku");
+                }
+            }
+
+            // Tens (十)
+            if (te > 0) {
+                if (te === 1) {
+                    kanji += "十"; kana.push("じゅう"); romaji.push("juu");
+                } else {
+                    kanji += basicDigits[te].kanji + "十";
+                    kana.push(basicDigits[te].kana + "じゅう");
+                    romaji.push(basicDigits[te].romaji + "juu");
+                }
+            }
+
+            // Ones
+            if (un > 0) {
+                kanji += basicDigits[un].kanji;
+                kana.push(basicDigits[un].kana);
+                romaji.push(basicDigits[un].romaji);
+            }
+
+            return { kanji, kana, romaji };
+        }
+    </script>
+</body>
+</html>
