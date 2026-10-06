@@ -1,0 +1,3919 @@
+[
+  {
+    "id": "1791311891767",
+    "kanji": "来る",
+    "kana": "くる",
+    "romaji": "kuru",
+    "english": "to come (destination ni/e)",
+    "tags": [
+      "Lesson 3",
+      "irregular verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891767
+  },
+  {
+    "id": "1791311891768",
+    "kanji": "する",
+    "kana": "する",
+    "romaji": "suru",
+    "english": "to do (~o)",
+    "tags": [
+      "Lesson 3",
+      "irregular verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891768
+  },
+  {
+    "id": "1791311891769",
+    "kanji": "飲む",
+    "kana": "のむ",
+    "romaji": "nomu",
+    "english": "to drink (~o)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891769
+  },
+  {
+    "id": "1791311891770",
+    "kanji": "食べる",
+    "kana": "たべる",
+    "romaji": "taberu",
+    "english": "to eat (~o)",
+    "tags": [
+      "Lesson 3",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891770
+  },
+  {
+    "id": "1791311891771",
+    "kanji": "起きる",
+    "kana": "おきる",
+    "romaji": "okiru",
+    "english": "to get up",
+    "tags": [
+      "Lesson 3",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891771
+  },
+  {
+    "id": "1791311891772",
+    "kanji": "行く",
+    "kana": "いく",
+    "romaji": "iku",
+    "english": "to go (destination ni/e)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891772
+  },
+  {
+    "id": "1791311891773",
+    "kanji": "帰る",
+    "kana": "かえる",
+    "romaji": "kaeru",
+    "english": "to go back; to return (destination ni/e)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891773
+  },
+  {
+    "id": "1791311891774",
+    "kanji": "聞く",
+    "kana": "きく",
+    "romaji": "kiku",
+    "english": "to listen; to hear (~o)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891774
+  },
+  {
+    "id": "1791311891775",
+    "kanji": "読む",
+    "kana": "よむ",
+    "romaji": "yomu",
+    "english": "to read (~o)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891775
+  },
+  {
+    "id": "1791311891776",
+    "kanji": "見る",
+    "kana": "みる",
+    "romaji": "miru",
+    "english": "to see; to look at; to watch (~o)",
+    "tags": [
+      "Lesson 3",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891776
+  },
+  {
+    "id": "1791311891777",
+    "kanji": "寝る",
+    "kana": "ねる",
+    "romaji": "neru",
+    "english": "to sleep; to go to sleep",
+    "tags": [
+      "Lesson 3",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891777
+  },
+  {
+    "id": "1791311891778",
+    "kanji": "話す",
+    "kana": "はなす",
+    "romaji": "hanasu",
+    "english": "to speak; to talk (language e/de)",
+    "tags": [
+      "Lesson 3",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891778
+  },
+  {
+    "id": "1791311891779",
+    "kanji": "勉強する",
+    "kana": "べんきょうする",
+    "romaji": "benkyousuru",
+    "english": "to study (~o)",
+    "tags": [
+      "Lesson 3",
+      "irregular verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891779
+  },
+  {
+    "id": "1791311891780",
+    "kanji": "いる",
+    "kana": "いる",
+    "romaji": "iru",
+    "english": "(a person) is in ...; stays at ...",
+    "tags": [
+      "Lesson 4",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891780
+  },
+  {
+    "id": "1791311891781",
+    "kanji": "ある",
+    "kana": "ある",
+    "romaji": "aru",
+    "english": "there is ...",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891781
+  },
+  {
+    "id": "1791311891782",
+    "kanji": "買う",
+    "kana": "かう",
+    "romaji": "kau",
+    "english": "to buy (~o)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891782
+  },
+  {
+    "id": "1791311891783",
+    "kanji": "会う",
+    "kana": "あう",
+    "romaji": "au",
+    "english": "to meet; to see (a person)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891783
+  },
+  {
+    "id": "1791311891784",
+    "kanji": "撮る",
+    "kana": "とる",
+    "romaji": "toru",
+    "english": "to take (a picture) (~o)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891784
+  },
+  {
+    "id": "1791311891785",
+    "kanji": "わかる",
+    "kana": "わかる",
+    "romaji": "wakaru",
+    "english": "to understand (~ga)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891785
+  },
+  {
+    "id": "1791311891786",
+    "kanji": "待つ",
+    "kana": "まつ",
+    "romaji": "matsu",
+    "english": "to wait (~o)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891786
+  },
+  {
+    "id": "1791311891787",
+    "kanji": "書く",
+    "kana": "かく",
+    "romaji": "kaku",
+    "english": "to write (person ni thing o)",
+    "tags": [
+      "Lesson 4",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891787
+  },
+  {
+    "id": "1791311891788",
+    "kanji": "聞く",
+    "kana": "きく",
+    "romaji": "kiku",
+    "english": "to ask (person ni)",
+    "tags": [
+      "Lesson 5",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891788
+  },
+  {
+    "id": "1791311891789",
+    "kanji": "やる",
+    "kana": "やる",
+    "romaji": "yaru",
+    "english": "to do; to perform (~o)",
+    "tags": [
+      "Lesson 5",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891789
+  },
+  {
+    "id": "1791311891790",
+    "kanji": "出かける",
+    "kana": "でかける",
+    "romaji": "dekakeru",
+    "english": "to go out",
+    "tags": [
+      "Lesson 5",
+      "ru-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891790
+  },
+  {
+    "id": "1791311891791",
+    "kanji": "乗る",
+    "kana": "のる",
+    "romaji": "noru",
+    "english": "to ride; to board (~ni)",
+    "tags": [
+      "Lesson 5",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891791
+  },
+  {
+    "id": "1791311891792",
+    "kanji": "泳ぐ",
+    "kana": "およぐ",
+    "romaji": "oyogu",
+    "english": "to swim",
+    "tags": [
+      "Lesson 5",
+      "u-verb",
+      "verb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311891792
+  },
+  {
+    "id": "1791311879176",
+    "kanji": "午前",
+    "kana": "ごぜん",
+    "romaji": "gozen",
+    "english": "A.M.",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879176
+  },
+  {
+    "id": "1791311879177",
+    "kanji": "半",
+    "kana": "はん",
+    "romaji": "han",
+    "english": "half",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879177
+  },
+  {
+    "id": "1791311879178",
+    "kanji": "二時半",
+    "kana": "にじはん",
+    "romaji": "niji han",
+    "english": "half past two",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879178
+  },
+  {
+    "id": "1791311879179",
+    "kanji": "今",
+    "kana": "いま",
+    "romaji": "ima",
+    "english": "now",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879179
+  },
+  {
+    "id": "1791311879180",
+    "kanji": "〜時",
+    "kana": "〜じ",
+    "romaji": "...ji",
+    "english": "o'clock",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879180
+  },
+  {
+    "id": "1791311879181",
+    "kanji": "一時",
+    "kana": "いちじ",
+    "romaji": "ichiji",
+    "english": "one o'clock",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879181
+  },
+  {
+    "id": "1791311879182",
+    "kanji": "午後",
+    "kana": "ごご",
+    "romaji": "gogo",
+    "english": "P.M.",
+    "tags": [
+      "Lesson 1",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879182
+  },
+  {
+    "id": "1791311879183",
+    "kanji": "〜ごろ",
+    "kana": "〜ごろ",
+    "romaji": "... goro",
+    "english": "at about ...",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879183
+  },
+  {
+    "id": "1791311879184",
+    "kanji": "毎日",
+    "kana": "まいにち",
+    "romaji": "mainichi",
+    "english": "every day",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879184
+  },
+  {
+    "id": "1791311879185",
+    "kanji": "毎晩",
+    "kana": "まいばん",
+    "romaji": "maiban",
+    "english": "every night",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879185
+  },
+  {
+    "id": "1791311879186",
+    "kanji": "朝",
+    "kana": "あさ",
+    "romaji": "asa",
+    "english": "morning",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879186
+  },
+  {
+    "id": "1791311879187",
+    "kanji": "土曜日",
+    "kana": "どようび",
+    "romaji": "doyoubi",
+    "english": "Saturday",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879187
+  },
+  {
+    "id": "1791311879188",
+    "kanji": "日曜日",
+    "kana": "にちようび",
+    "romaji": "nichiyoubi",
+    "english": "Sunday",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879188
+  },
+  {
+    "id": "1791311879189",
+    "kanji": "今日",
+    "kana": "きょう",
+    "romaji": "kyou",
+    "english": "today",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879189
+  },
+  {
+    "id": "1791311879190",
+    "kanji": "明日",
+    "kana": "あした",
+    "romaji": "ashita",
+    "english": "tomorrow",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879190
+  },
+  {
+    "id": "1791311879191",
+    "kanji": "今晩",
+    "kana": "こんばん",
+    "romaji": "konban",
+    "english": "tonight",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879191
+  },
+  {
+    "id": "1791311879192",
+    "kanji": "週末",
+    "kana": "しゅうまつ",
+    "romaji": "shuumatsu",
+    "english": "weekend",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879192
+  },
+  {
+    "id": "1791311879193",
+    "kanji": "いつ",
+    "kana": "いつ",
+    "romaji": "itsu",
+    "english": "when",
+    "tags": [
+      "Lesson 3",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879193
+  },
+  {
+    "id": "1791311879194",
+    "kanji": "金曜日",
+    "kana": "きんようび",
+    "romaji": "kin'youbi",
+    "english": "Friday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879194
+  },
+  {
+    "id": "1791311879195",
+    "kanji": "先週",
+    "kana": "せんしゅう",
+    "romaji": "senshuu",
+    "english": "last week",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879195
+  },
+  {
+    "id": "1791311879196",
+    "kanji": "月曜日",
+    "kana": "げつようび",
+    "romaji": "getsuyoubi",
+    "english": "Monday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879196
+  },
+  {
+    "id": "1791311879197",
+    "kanji": "一時間",
+    "kana": "いちじかん",
+    "romaji": "ichijikan",
+    "english": "one hour",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879197
+  },
+  {
+    "id": "1791311879198",
+    "kanji": "木曜日",
+    "kana": "もくようび",
+    "romaji": "mokuyoubi",
+    "english": "Thursday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879198
+  },
+  {
+    "id": "1791311879199",
+    "kanji": "火曜日",
+    "kana": "かようび",
+    "romaji": "kayoubi",
+    "english": "Tuesday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879199
+  },
+  {
+    "id": "1791311879200",
+    "kanji": "水曜日",
+    "kana": "すいようび",
+    "romaji": "suiyoubi",
+    "english": "Wednesday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879200
+  },
+  {
+    "id": "1791311879201",
+    "kanji": "時",
+    "kana": "とき",
+    "romaji": "toki",
+    "english": "when ...; at the time of ...",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879201
+  },
+  {
+    "id": "1791311879202",
+    "kanji": "昨日",
+    "kana": "きのう",
+    "romaji": "kinou",
+    "english": "yesterday",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879202
+  },
+  {
+    "id": "1791311879203",
+    "kanji": "〜時間",
+    "kana": "〜じかん",
+    "romaji": "... jikan",
+    "english": "... hours",
+    "tags": [
+      "Lesson 4",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879203
+  },
+  {
+    "id": "1791311879204",
+    "kanji": "誕生日",
+    "kana": "たんじょうび",
+    "romaji": "tanjoubi",
+    "english": "birthday",
+    "tags": [
+      "Lesson 5",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879204
+  },
+  {
+    "id": "1791311879205",
+    "kanji": "休み",
+    "kana": "やすみ",
+    "romaji": "yasumi",
+    "english": "holiday; day off; absence",
+    "tags": [
+      "Lesson 5",
+      "time"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311879205
+  },
+  {
+    "id": "1791311861411",
+    "kanji": "オーストラリア",
+    "kana": "おーすとらりあ",
+    "romaji": "Oosutoraria",
+    "english": "Australia",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861411
+  },
+  {
+    "id": "1791311861412",
+    "kanji": "イギリス",
+    "kana": "いぎりす",
+    "romaji": "Igirisu",
+    "english": "Britain",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861412
+  },
+  {
+    "id": "1791311861413",
+    "kanji": "カナダ",
+    "kana": "かなだ",
+    "romaji": "Kanada",
+    "english": "Canada",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861413
+  },
+  {
+    "id": "1791311861414",
+    "kanji": "中国",
+    "kana": "ちゅうごく",
+    "romaji": "Chuugoku",
+    "english": "China",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861414
+  },
+  {
+    "id": "1791311861415",
+    "kanji": "大学",
+    "kana": "だいがく",
+    "romaji": "daigaku",
+    "english": "college; university",
+    "tags": [
+      "Lesson 1",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861415
+  },
+  {
+    "id": "1791311861416",
+    "kanji": "国",
+    "kana": "くに",
+    "romaji": "kuni",
+    "english": "country",
+    "tags": [
+      "Lesson 1",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861416
+  },
+  {
+    "id": "1791311861417",
+    "kanji": "エジプト",
+    "kana": "えじぷと",
+    "romaji": "Ejiputo",
+    "english": "Egypt",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861417
+  },
+  {
+    "id": "1791311861418",
+    "kanji": "高校",
+    "kana": "こうこう",
+    "romaji": "koukou",
+    "english": "high school",
+    "tags": [
+      "Lesson 1",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861418
+  },
+  {
+    "id": "1791311861419",
+    "kanji": "インド",
+    "kana": "いんど",
+    "romaji": "Indo",
+    "english": "India",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861419
+  },
+  {
+    "id": "1791311861420",
+    "kanji": "日本",
+    "kana": "にほん",
+    "romaji": "Nihon",
+    "english": "Japan",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861420
+  },
+  {
+    "id": "1791311861421",
+    "kanji": "韓国",
+    "kana": "かんこく",
+    "romaji": "Kankoku",
+    "english": "Korea",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861421
+  },
+  {
+    "id": "1791311861422",
+    "kanji": "フィリピン",
+    "kana": "ふぃりぴん",
+    "romaji": "Firipin",
+    "english": "Philippines",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861422
+  },
+  {
+    "id": "1791311861423",
+    "kanji": "アメリカ",
+    "kana": "あめりか",
+    "romaji": "Amerika",
+    "english": "U.S.A.",
+    "tags": [
+      "Lesson 1",
+      "place",
+      "country"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861423
+  },
+  {
+    "id": "1791311861424",
+    "kanji": "ここ",
+    "kana": "ここ",
+    "romaji": "koko",
+    "english": "here",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861424
+  },
+  {
+    "id": "1791311861425",
+    "kanji": "あそこ",
+    "kana": "あそこ",
+    "romaji": "asoko",
+    "english": "over there",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861425
+  },
+  {
+    "id": "1791311861426",
+    "kanji": "そこ",
+    "kana": "そこ",
+    "romaji": "soko",
+    "english": "there",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861426
+  },
+  {
+    "id": "1791311861427",
+    "kanji": "どこ",
+    "kana": "どこ",
+    "romaji": "doko",
+    "english": "where",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861427
+  },
+  {
+    "id": "1791311861428",
+    "kanji": "銀行",
+    "kana": "ぎんこう",
+    "romaji": "ginkou",
+    "english": "bank",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861428
+  },
+  {
+    "id": "1791311861429",
+    "kanji": "コンビニ",
+    "kana": "こんびに",
+    "romaji": "konbini",
+    "english": "convenience store",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861429
+  },
+  {
+    "id": "1791311861430",
+    "kanji": "図書館",
+    "kana": "としょかん",
+    "romaji": "toshokan",
+    "english": "library",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861430
+  },
+  {
+    "id": "1791311861431",
+    "kanji": "郵便局",
+    "kana": "ゆうびんきょく",
+    "romaji": "yuubinkyoku",
+    "english": "post office",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861431
+  },
+  {
+    "id": "1791311861432",
+    "kanji": "トイレ",
+    "kana": "といれ",
+    "romaji": "toire",
+    "english": "toilet; restroom",
+    "tags": [
+      "Lesson 2",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861432
+  },
+  {
+    "id": "1791311861433",
+    "kanji": "カフェ",
+    "kana": "かふぇ",
+    "romaji": "kafe",
+    "english": "cafe",
+    "tags": [
+      "Lesson 3",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861433
+  },
+  {
+    "id": "1791311861434",
+    "kanji": "家",
+    "kana": "いえ",
+    "romaji": "ie",
+    "english": "home; house",
+    "tags": [
+      "Lesson 3",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861434
+  },
+  {
+    "id": "1791311861435",
+    "kanji": "家",
+    "kana": "うち",
+    "romaji": "uchi",
+    "english": "home; house; my place",
+    "tags": [
+      "Lesson 3",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861435
+  },
+  {
+    "id": "1791311861436",
+    "kanji": "学校",
+    "kana": "がっこう",
+    "romaji": "gakkou",
+    "english": "school",
+    "tags": [
+      "Lesson 3",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861436
+  },
+  {
+    "id": "1791311861437",
+    "kanji": "本屋",
+    "kana": "ほんや",
+    "romaji": "hon'ya",
+    "english": "bookstore",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861437
+  },
+  {
+    "id": "1791311861438",
+    "kanji": "バス停",
+    "kana": "ばすてい",
+    "romaji": "basutei",
+    "english": "bus stop",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861438
+  },
+  {
+    "id": "1791311861439",
+    "kanji": "病院",
+    "kana": "びょういん",
+    "romaji": "byouin",
+    "english": "hospital",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861439
+  },
+  {
+    "id": "1791311861440",
+    "kanji": "ホテル",
+    "kana": "ほてる",
+    "romaji": "hoteru",
+    "english": "hotel",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861440
+  },
+  {
+    "id": "1791311861441",
+    "kanji": "公園",
+    "kana": "こうえん",
+    "romaji": "kouen",
+    "english": "park",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861441
+  },
+  {
+    "id": "1791311861442",
+    "kanji": "レストラン",
+    "kana": "れすとらん",
+    "romaji": "resutoran",
+    "english": "restaurant",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861442
+  },
+  {
+    "id": "1791311861443",
+    "kanji": "スーパー",
+    "kana": "すーぱー",
+    "romaji": "suupaa",
+    "english": "supermarket",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861443
+  },
+  {
+    "id": "1791311861444",
+    "kanji": "お寺",
+    "kana": "おてら",
+    "romaji": "otera",
+    "english": "temple",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861444
+  },
+  {
+    "id": "1791311861445",
+    "kanji": "町",
+    "kana": "まち",
+    "romaji": "machi",
+    "english": "town; city",
+    "tags": [
+      "Lesson 4",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861445
+  },
+  {
+    "id": "1791311861446",
+    "kanji": "部屋",
+    "kana": "へや",
+    "romaji": "heya",
+    "english": "room",
+    "tags": [
+      "Lesson 5",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861446
+  },
+  {
+    "id": "1791311861447",
+    "kanji": "海",
+    "kana": "うみ",
+    "romaji": "umi",
+    "english": "sea",
+    "tags": [
+      "Lesson 5",
+      "place"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311861447
+  },
+  {
+    "id": "1791311799296",
+    "kanji": "大学生",
+    "kana": "だいがくせい",
+    "romaji": "daigakusei",
+    "english": "college student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799296
+  },
+  {
+    "id": "1791311799297",
+    "kanji": "医者",
+    "kana": "いしゃ",
+    "romaji": "isha",
+    "english": "doctor",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799297
+  },
+  {
+    "id": "1791311799298",
+    "kanji": "一年生",
+    "kana": "いちねんせい",
+    "romaji": "ichinensei",
+    "english": "first-year student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799298
+  },
+  {
+    "id": "1791311799299",
+    "kanji": "友達",
+    "kana": "ともだち",
+    "romaji": "tomodachi",
+    "english": "friend",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799299
+  },
+  {
+    "id": "1791311799300",
+    "kanji": "大学院生",
+    "kana": "だいがくいんせい",
+    "romaji": "daigakuinsei",
+    "english": "graduate student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799300
+  },
+  {
+    "id": "1791311799301",
+    "kanji": "高校生",
+    "kana": "こうこうせい",
+    "romaji": "koukousei",
+    "english": "high school student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799301
+  },
+  {
+    "id": "1791311799302",
+    "kanji": "主婦",
+    "kana": "しゅふ",
+    "romaji": "shufu",
+    "english": "housewife",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799302
+  },
+  {
+    "id": "1791311799303",
+    "kanji": "私",
+    "kana": "わたし",
+    "romaji": "watashi",
+    "english": "I",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799303
+  },
+  {
+    "id": "1791311799304",
+    "kanji": "留学生",
+    "kana": "りゅうがくせい",
+    "romaji": "ryuugakusei",
+    "english": "international student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799304
+  },
+  {
+    "id": "1791311799305",
+    "kanji": "日本人",
+    "kana": "にほんじん",
+    "romaji": "nihonjin",
+    "english": "Japanese people",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799305
+  },
+  {
+    "id": "1791311799306",
+    "kanji": "弁護士",
+    "kana": "べんごし",
+    "romaji": "bengoshi",
+    "english": "lawyer",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799306
+  },
+  {
+    "id": "1791311799307",
+    "kanji": "〜さん",
+    "kana": "〜さん",
+    "romaji": "...san",
+    "english": "Mr./Ms. ...",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799307
+  },
+  {
+    "id": "1791311799308",
+    "kanji": "お父さん",
+    "kana": "おとうさん",
+    "romaji": "otousan",
+    "english": "father",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799308
+  },
+  {
+    "id": "1791311799309",
+    "kanji": "お母さん",
+    "kana": "おかあさん",
+    "romaji": "okaasan",
+    "english": "mother",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799309
+  },
+  {
+    "id": "1791311799310",
+    "kanji": "看護師",
+    "kana": "かんごし",
+    "romaji": "kangoshi",
+    "english": "nurse",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799310
+  },
+  {
+    "id": "1791311799311",
+    "kanji": "会社員",
+    "kana": "かいしゃいん",
+    "romaji": "kaishain",
+    "english": "office worker",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799311
+  },
+  {
+    "id": "1791311799312",
+    "kanji": "お兄さん",
+    "kana": "おにいさん",
+    "romaji": "oniisan",
+    "english": "older brother",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799312
+  },
+  {
+    "id": "1791311799313",
+    "kanji": "お姉さん",
+    "kana": "おねえさん",
+    "romaji": "oneesan",
+    "english": "older sister",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799313
+  },
+  {
+    "id": "1791311799314",
+    "kanji": "〜人",
+    "kana": "〜じん",
+    "romaji": "...jin",
+    "english": "... people",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799314
+  },
+  {
+    "id": "1791311799315",
+    "kanji": "学生",
+    "kana": "がくせい",
+    "romaji": "gakusei",
+    "english": "student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799315
+  },
+  {
+    "id": "1791311799316",
+    "kanji": "先生",
+    "kana": "せんせい",
+    "romaji": "sensei",
+    "english": "teacher; Professor ...",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799316
+  },
+  {
+    "id": "1791311799317",
+    "kanji": "〜年生",
+    "kana": "〜ねんせい",
+    "romaji": "...nensei",
+    "english": "... year student",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799317
+  },
+  {
+    "id": "1791311799318",
+    "kanji": "弟",
+    "kana": "おとうと",
+    "romaji": "otouto",
+    "english": "younger brother",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799318
+  },
+  {
+    "id": "1791311799319",
+    "kanji": "妹",
+    "kana": "いもうと",
+    "romaji": "imouto",
+    "english": "younger sister",
+    "tags": [
+      "Lesson 1",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799319
+  },
+  {
+    "id": "1791311799320",
+    "kanji": "誰",
+    "kana": "だれ",
+    "romaji": "dare",
+    "english": "who",
+    "tags": [
+      "Lesson 2",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799320
+  },
+  {
+    "id": "1791311799321",
+    "kanji": "子供",
+    "kana": "こども",
+    "romaji": "kodomo",
+    "english": "child",
+    "tags": [
+      "Lesson 4",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799321
+  },
+  {
+    "id": "1791311799322",
+    "kanji": "人",
+    "kana": "ひと",
+    "romaji": "hito",
+    "english": "person",
+    "tags": [
+      "Lesson 4",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799322
+  },
+  {
+    "id": "1791311799323",
+    "kanji": "あなた",
+    "kana": "あなた",
+    "romaji": "anata",
+    "english": "you",
+    "tags": [
+      "Lesson 4",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799323
+  },
+  {
+    "id": "1791311799324",
+    "kanji": "僕",
+    "kana": "ぼく",
+    "romaji": "boku",
+    "english": "I (used by men)",
+    "tags": [
+      "Lesson 5",
+      "people"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311799324
+  },
+  {
+    "id": "1791311775441",
+    "kanji": "アジア研究",
+    "kana": "あじあけんきゅう",
+    "romaji": "ajia kenkyuu",
+    "english": "Asian studies",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775441
+  },
+  {
+    "id": "1791311775442",
+    "kanji": "生物学",
+    "kana": "せいぶつがく",
+    "romaji": "seibutsu gaku",
+    "english": "biology",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775442
+  },
+  {
+    "id": "1791311775443",
+    "kanji": "ビジネス",
+    "kana": "びじねす",
+    "romaji": "bijinesu",
+    "english": "business",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775443
+  },
+  {
+    "id": "1791311775444",
+    "kanji": "コンピューター",
+    "kana": "こんぴゅーたー",
+    "romaji": "konpyuutaa",
+    "english": "computer",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775444
+  },
+  {
+    "id": "1791311775445",
+    "kanji": "経済",
+    "kana": "けいざい",
+    "romaji": "keizai",
+    "english": "economics",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775445
+  },
+  {
+    "id": "1791311775446",
+    "kanji": "工学",
+    "kana": "こうがく",
+    "romaji": "kougaku",
+    "english": "engineering",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775446
+  },
+  {
+    "id": "1791311775447",
+    "kanji": "家族",
+    "kana": "かぞく",
+    "romaji": "kazoku",
+    "english": "family",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775447
+  },
+  {
+    "id": "1791311775448",
+    "kanji": "歴史",
+    "kana": "れきし",
+    "romaji": "rekishi",
+    "english": "history",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775448
+  },
+  {
+    "id": "1791311775449",
+    "kanji": "そうですか",
+    "kana": "そうですか",
+    "romaji": "sou desu ka",
+    "english": "I see.; Is that so?",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775449
+  },
+  {
+    "id": "1791311775450",
+    "kanji": "国際関係",
+    "kana": "こくさいかんけい",
+    "romaji": "kokusai kankei",
+    "english": "international relations",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775450
+  },
+  {
+    "id": "1791311775451",
+    "kanji": "日本語",
+    "kana": "にほんご",
+    "romaji": "nihongo",
+    "english": "Japanese language",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775451
+  },
+  {
+    "id": "1791311775452",
+    "kanji": "仕事",
+    "kana": "しごと",
+    "romaji": "shigoto",
+    "english": "job; work",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775452
+  },
+  {
+    "id": "1791311775453",
+    "kanji": "文学",
+    "kana": "ぶんがく",
+    "romaji": "bungaku",
+    "english": "literature",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775453
+  },
+  {
+    "id": "1791311775454",
+    "kanji": "専攻",
+    "kana": "せんこう",
+    "romaji": "senkou",
+    "english": "major",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775454
+  },
+  {
+    "id": "1791311775455",
+    "kanji": "名前",
+    "kana": "なまえ",
+    "romaji": "namae",
+    "english": "name",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775455
+  },
+  {
+    "id": "1791311775456",
+    "kanji": "番号",
+    "kana": "ばんごう",
+    "romaji": "bangou",
+    "english": "number",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775456
+  },
+  {
+    "id": "1791311775457",
+    "kanji": "〜番",
+    "kana": "〜ばん",
+    "romaji": "...ban",
+    "english": "number ...",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775457
+  },
+  {
+    "id": "1791311775458",
+    "kanji": "政治",
+    "kana": "せいじ",
+    "romaji": "seiji",
+    "english": "politics",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775458
+  },
+  {
+    "id": "1791311775459",
+    "kanji": "そうです",
+    "kana": "そうです",
+    "romaji": "sou desu",
+    "english": "That's right.",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775459
+  },
+  {
+    "id": "1791311775460",
+    "kanji": "あのお",
+    "kana": "あのお",
+    "romaji": "anoo",
+    "english": "um ...",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775460
+  },
+  {
+    "id": "1791311775461",
+    "kanji": "何",
+    "kana": "なん/なに",
+    "romaji": "nan/nani",
+    "english": "what",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775461
+  },
+  {
+    "id": "1791311775462",
+    "kanji": "はい",
+    "kana": "はい",
+    "romaji": "hai",
+    "english": "yes",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775462
+  },
+  {
+    "id": "1791311775463",
+    "kanji": "〜語",
+    "kana": "〜ご",
+    "romaji": "...go",
+    "english": "... language",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775463
+  },
+  {
+    "id": "1791311775464",
+    "kanji": "〜歳",
+    "kana": "〜さい",
+    "romaji": "...sai",
+    "english": "... years old",
+    "tags": [
+      "Lesson 1"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775464
+  },
+  {
+    "id": "1791311775465",
+    "kanji": "英語",
+    "kana": "えいご",
+    "romaji": "eigo",
+    "english": "English (language)",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775465
+  },
+  {
+    "id": "1791311775466",
+    "kanji": "いくら",
+    "kana": "いくら",
+    "romaji": "ikura",
+    "english": "how much",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775466
+  },
+  {
+    "id": "1791311775467",
+    "kanji": "（〜を）ください",
+    "kana": "（〜を）ください",
+    "romaji": "(... o) kudasai",
+    "english": "Please give me ...",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775467
+  },
+  {
+    "id": "1791311775468",
+    "kanji": "どうぞ",
+    "kana": "どうぞ",
+    "romaji": "doozo",
+    "english": "Please.; Here it is.",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775468
+  },
+  {
+    "id": "1791311775469",
+    "kanji": "どうも",
+    "kana": "どうも",
+    "romaji": "doumo",
+    "english": "Thank you.",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775469
+  },
+  {
+    "id": "1791311775470",
+    "kanji": "その",
+    "kana": "その",
+    "romaji": "sono",
+    "english": "that ...",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775470
+  },
+  {
+    "id": "1791311775471",
+    "kanji": "あの",
+    "kana": "あの",
+    "romaji": "ano",
+    "english": "that ... (over there)",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775471
+  },
+  {
+    "id": "1791311775472",
+    "kanji": "それ",
+    "kana": "それ",
+    "romaji": "sore",
+    "english": "that one",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775472
+  },
+  {
+    "id": "1791311775473",
+    "kanji": "あれ",
+    "kana": "あれ",
+    "romaji": "are",
+    "english": "that one (over there)",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775473
+  },
+  {
+    "id": "1791311775474",
+    "kanji": "じゃあ",
+    "kana": "じゃあ",
+    "romaji": "jaa",
+    "english": "then ...; if that is the case",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775474
+  },
+  {
+    "id": "1791311775475",
+    "kanji": "この",
+    "kana": "この",
+    "romaji": "kono",
+    "english": "this ...",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775475
+  },
+  {
+    "id": "1791311775476",
+    "kanji": "これ",
+    "kana": "これ",
+    "romaji": "kore",
+    "english": "this one",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775476
+  },
+  {
+    "id": "1791311775477",
+    "kanji": "いらっしゃいませ",
+    "kana": "いらっしゃいませ",
+    "romaji": "irasshaimase",
+    "english": "Welcome (to our store).",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775477
+  },
+  {
+    "id": "1791311775478",
+    "kanji": "どの",
+    "kana": "どの",
+    "romaji": "dono",
+    "english": "which ...",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775478
+  },
+  {
+    "id": "1791311775479",
+    "kanji": "どれ",
+    "kana": "どれ",
+    "romaji": "dore",
+    "english": "which one",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775479
+  },
+  {
+    "id": "1791311775480",
+    "kanji": "（〜を）おねがいします",
+    "kana": "（〜を）おねがいします",
+    "romaji": "(... o) onegaishimasu",
+    "english": "... please.",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775480
+  },
+  {
+    "id": "1791311775481",
+    "kanji": "〜円",
+    "kana": "〜えん",
+    "romaji": "... en",
+    "english": "... yen",
+    "tags": [
+      "Lesson 2"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775481
+  },
+  {
+    "id": "1791311775482",
+    "kanji": "でも",
+    "kana": "でも",
+    "romaji": "demo",
+    "english": "but",
+    "tags": [
+      "Lesson 3"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775482
+  },
+  {
+    "id": "1791311775483",
+    "kanji": "どうですか",
+    "kana": "どうですか",
+    "romaji": "dou desu ka",
+    "english": "How about ...?; How is ...?",
+    "tags": [
+      "Lesson 3"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775483
+  },
+  {
+    "id": "1791311775484",
+    "kanji": "そうですね",
+    "kana": "そうですね",
+    "romaji": "sou desu ne",
+    "english": "That's right.; Let me see.",
+    "tags": [
+      "Lesson 3"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775484
+  },
+  {
+    "id": "1791311775485",
+    "kanji": "ええ",
+    "kana": "ええ",
+    "romaji": "ee",
+    "english": "yes",
+    "tags": [
+      "Lesson 3"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775485
+  },
+  {
+    "id": "1791311775486",
+    "kanji": "〜ぐらい",
+    "kana": "〜ぐらい",
+    "romaji": "... gurai",
+    "english": "about (approximate measurement)",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775486
+  },
+  {
+    "id": "1791311775487",
+    "kanji": "それから",
+    "kana": "それから",
+    "romaji": "sorekara",
+    "english": "and then",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775487
+  },
+  {
+    "id": "1791311775488",
+    "kanji": "クラス",
+    "kana": "くらす",
+    "romaji": "kurasu",
+    "english": "class",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775488
+  },
+  {
+    "id": "1791311775489",
+    "kanji": "もしもし",
+    "kana": "もしもし",
+    "romaji": "moshimoshi",
+    "english": "Hello? (used on the phone)",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775489
+  },
+  {
+    "id": "1791311775490",
+    "kanji": "ごめんなさい",
+    "kana": "ごめんなさい",
+    "romaji": "gomen nasai",
+    "english": "I'm sorry.",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775490
+  },
+  {
+    "id": "1791311775491",
+    "kanji": "だから",
+    "kana": "だから",
+    "romaji": "dakara",
+    "english": "so; therefore",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775491
+  },
+  {
+    "id": "1791311775492",
+    "kanji": "〜と",
+    "kana": "〜と",
+    "romaji": "... to",
+    "english": "together with (a person); and",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775492
+  },
+  {
+    "id": "1791311775493",
+    "kanji": "どうして",
+    "kana": "どうして",
+    "romaji": "doushite",
+    "english": "why",
+    "tags": [
+      "Lesson 4"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775493
+  },
+  {
+    "id": "1791311775494",
+    "kanji": "〜枚",
+    "kana": "〜まい",
+    "romaji": "... mai",
+    "english": "counter for flat objects",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775494
+  },
+  {
+    "id": "1791311775495",
+    "kanji": "大丈夫",
+    "kana": "だいじょうぶ",
+    "romaji": "daijoubu",
+    "english": "It's okay.; Not to worry.; Everything is under control.",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775495
+  },
+  {
+    "id": "1791311775496",
+    "kanji": "一緒に",
+    "kana": "いっしょに",
+    "romaji": "issho ni",
+    "english": "together",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775496
+  },
+  {
+    "id": "1791311775497",
+    "kanji": "旅行",
+    "kana": "りょこう",
+    "romaji": "ryokou",
+    "english": "travel",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775497
+  },
+  {
+    "id": "1791311775498",
+    "kanji": "天気",
+    "kana": "てんき",
+    "romaji": "tenki",
+    "english": "weather",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775498
+  },
+  {
+    "id": "1791311775499",
+    "kanji": "どんな",
+    "kana": "どんな",
+    "romaji": "donna",
+    "english": "what kind of ...",
+    "tags": [
+      "Lesson 5"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311775499
+  },
+  {
+    "id": "1791311763306",
+    "kanji": "電話",
+    "kana": "でんわ",
+    "romaji": "denwa",
+    "english": "telephone",
+    "tags": [
+      "Lesson 1",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763306
+  },
+  {
+    "id": "1791311763307",
+    "kanji": "鞄",
+    "kana": "かばん",
+    "romaji": "kaban",
+    "english": "bag",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763307
+  },
+  {
+    "id": "1791311763308",
+    "kanji": "自転車",
+    "kana": "じてんしゃ",
+    "romaji": "jitensha",
+    "english": "bicycle",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763308
+  },
+  {
+    "id": "1791311763309",
+    "kanji": "ジーンズ",
+    "kana": "じーんず",
+    "romaji": "jiinzu",
+    "english": "jeans",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763309
+  },
+  {
+    "id": "1791311763310",
+    "kanji": "肉",
+    "kana": "にく",
+    "romaji": "niku",
+    "english": "meat",
+    "tags": [
+      "Lesson 2",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763310
+  },
+  {
+    "id": "1791311763311",
+    "kanji": "メニュー",
+    "kana": "めにかゅう",
+    "romaji": "menyuu",
+    "english": "menu",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763311
+  },
+  {
+    "id": "1791311763312",
+    "kanji": "新聞",
+    "kana": "しんぶん",
+    "romaji": "shinbun",
+    "english": "newspaper",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763312
+  },
+  {
+    "id": "1791311763313",
+    "kanji": "ノート",
+    "kana": "のーと",
+    "romaji": "nooto",
+    "english": "notebook",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763313
+  },
+  {
+    "id": "1791311763314",
+    "kanji": "とんかつ",
+    "kana": "とんかつ",
+    "romaji": "tonkatsu",
+    "english": "pork cutlet",
+    "tags": [
+      "Lesson 2",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763314
+  },
+  {
+    "id": "1791311763315",
+    "kanji": "魚",
+    "kana": "さかな",
+    "romaji": "sakana",
+    "english": "fish",
+    "tags": [
+      "Lesson 2",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763315
+  },
+  {
+    "id": "1791311763316",
+    "kanji": "靴",
+    "kana": "くつ",
+    "romaji": "kutsu",
+    "english": "shoes",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763316
+  },
+  {
+    "id": "1791311763317",
+    "kanji": "スマホ",
+    "kana": "すまほ",
+    "romaji": "sumaho",
+    "english": "smartphone; mobile",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763317
+  },
+  {
+    "id": "1791311763318",
+    "kanji": "Tシャツ",
+    "kana": "てぃーしゃつ",
+    "romaji": "tiishatsu",
+    "english": "T-shirt",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763318
+  },
+  {
+    "id": "1791311763319",
+    "kanji": "傘",
+    "kana": "かさ",
+    "romaji": "kasa",
+    "english": "umbrella",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763319
+  },
+  {
+    "id": "1791311763320",
+    "kanji": "野菜",
+    "kana": "やさい",
+    "romaji": "yasai",
+    "english": "vegetable",
+    "tags": [
+      "Lesson 2",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763320
+  },
+  {
+    "id": "1791311763321",
+    "kanji": "財布",
+    "kana": "さいふ",
+    "romaji": "saifu",
+    "english": "wallet",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763321
+  },
+  {
+    "id": "1791311763322",
+    "kanji": "時計",
+    "kana": "とけい",
+    "romaji": "tokei",
+    "english": "watch; clock",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763322
+  },
+  {
+    "id": "1791311763323",
+    "kanji": "本",
+    "kana": "ほん",
+    "romaji": "hon",
+    "english": "book",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763323
+  },
+  {
+    "id": "1791311763324",
+    "kanji": "帽子",
+    "kana": "ぼうし",
+    "romaji": "boushi",
+    "english": "hat; cap",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763324
+  },
+  {
+    "id": "1791311763325",
+    "kanji": "ペン",
+    "kana": "ぺん",
+    "romaji": "pen",
+    "english": "pen",
+    "tags": [
+      "Lesson 2",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763325
+  },
+  {
+    "id": "1791311763326",
+    "kanji": "朝ご飯",
+    "kana": "あさごはん",
+    "romaji": "asagohan",
+    "english": "breakfast",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763326
+  },
+  {
+    "id": "1791311763327",
+    "kanji": "コーヒー",
+    "kana": "こーひー",
+    "romaji": "koohee",
+    "english": "coffee",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "drink"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763327
+  },
+  {
+    "id": "1791311763328",
+    "kanji": "デート",
+    "kana": "でーと",
+    "romaji": "deeto",
+    "english": "date (romantic; not calendar)",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763328
+  },
+  {
+    "id": "1791311763329",
+    "kanji": "晩ご飯",
+    "kana": "ばんごはん",
+    "romaji": "bangohan",
+    "english": "dinner",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763329
+  },
+  {
+    "id": "1791311763330",
+    "kanji": "お茶",
+    "kana": "おちゃ",
+    "romaji": "ocha",
+    "english": "green tea",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "drink"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763330
+  },
+  {
+    "id": "1791311763331",
+    "kanji": "ハンバーガー",
+    "kana": "はんばーがー",
+    "romaji": "hanbaagaa",
+    "english": "hamburger",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763331
+  },
+  {
+    "id": "1791311763332",
+    "kanji": "アイスクリーム",
+    "kana": "あいすくりーむ",
+    "romaji": "aisukuriimu",
+    "english": "ice cream",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763332
+  },
+  {
+    "id": "1791311763333",
+    "kanji": "昼ご飯",
+    "kana": "ひるごはん",
+    "romaji": "hirugohan",
+    "english": "lunch",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763333
+  },
+  {
+    "id": "1791311763334",
+    "kanji": "雑誌",
+    "kana": "ざっし",
+    "romaji": "zasshi",
+    "english": "magazine",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763334
+  },
+  {
+    "id": "1791311763335",
+    "kanji": "映画",
+    "kana": "えいが",
+    "romaji": "eiga",
+    "english": "movie",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763335
+  },
+  {
+    "id": "1791311763336",
+    "kanji": "音楽",
+    "kana": "おんがく",
+    "romaji": "ongaku",
+    "english": "music",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763336
+  },
+  {
+    "id": "1791311763337",
+    "kanji": "お酒",
+    "kana": "おさけ",
+    "romaji": "osake",
+    "english": "sake; alcoholic drink",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "drink"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763337
+  },
+  {
+    "id": "1791311763338",
+    "kanji": "スポーツ",
+    "kana": "すぽーつ",
+    "romaji": "supootsu",
+    "english": "sports",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763338
+  },
+  {
+    "id": "1791311763339",
+    "kanji": "テニス",
+    "kana": "てにす",
+    "romaji": "tenisu",
+    "english": "tennis",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763339
+  },
+  {
+    "id": "1791311763340",
+    "kanji": "テレビ",
+    "kana": "てれび",
+    "romaji": "terebi",
+    "english": "TV",
+    "tags": [
+      "Lesson 3",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763340
+  },
+  {
+    "id": "1791311763341",
+    "kanji": "水",
+    "kana": "みず",
+    "romaji": "mizu",
+    "english": "water",
+    "tags": [
+      "Lesson 3",
+      "object",
+      "drink"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763341
+  },
+  {
+    "id": "1791311763342",
+    "kanji": "パン",
+    "kana": "ぱん",
+    "romaji": "pan",
+    "english": "bread",
+    "tags": [
+      "Lesson 4",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763342
+  },
+  {
+    "id": "1791311763343",
+    "kanji": "猫",
+    "kana": "ねこ",
+    "romaji": "neko",
+    "english": "cat",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763343
+  },
+  {
+    "id": "1791311763344",
+    "kanji": "椅子",
+    "kana": "いす",
+    "romaji": "isu",
+    "english": "chair",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763344
+  },
+  {
+    "id": "1791311763345",
+    "kanji": "机",
+    "kana": "つくえ",
+    "romaji": "tsukue",
+    "english": "desk",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763345
+  },
+  {
+    "id": "1791311763346",
+    "kanji": "犬",
+    "kana": "いぬ",
+    "romaji": "inu",
+    "english": "dog",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763346
+  },
+  {
+    "id": "1791311763347",
+    "kanji": "花",
+    "kana": "はな",
+    "romaji": "hana",
+    "english": "flower",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763347
+  },
+  {
+    "id": "1791311763348",
+    "kanji": "ゲーム",
+    "kana": "げーむ",
+    "romaji": "geemu",
+    "english": "game",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763348
+  },
+  {
+    "id": "1791311763349",
+    "kanji": "アルバイト",
+    "kana": "あるばいと",
+    "romaji": "arubaito",
+    "english": "part-time job",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763349
+  },
+  {
+    "id": "1791311763350",
+    "kanji": "写真",
+    "kana": "しゃしん",
+    "romaji": "shashin",
+    "english": "picture; photograph",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763350
+  },
+  {
+    "id": "1791311763351",
+    "kanji": "ご飯",
+    "kana": "ごはん",
+    "romaji": "gohan",
+    "english": "rice; meal",
+    "tags": [
+      "Lesson 4",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763351
+  },
+  {
+    "id": "1791311763352",
+    "kanji": "買い物",
+    "kana": "かいもの",
+    "romaji": "kaimono",
+    "english": "shopping",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763352
+  },
+  {
+    "id": "1791311763353",
+    "kanji": "レポート",
+    "kana": "れぽーと",
+    "romaji": "repooto",
+    "english": "(term) paper",
+    "tags": [
+      "Lesson 4",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763353
+  },
+  {
+    "id": "1791311763354",
+    "kanji": "バス",
+    "kana": "ばす",
+    "romaji": "basu",
+    "english": "bus",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763354
+  },
+  {
+    "id": "1791311763355",
+    "kanji": "飲み物",
+    "kana": "のみもの",
+    "romaji": "nomimono",
+    "english": "drink",
+    "tags": [
+      "Lesson 5",
+      "object",
+      "drink"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763355
+  },
+  {
+    "id": "1791311763356",
+    "kanji": "食べ物",
+    "kana": "たべもの",
+    "romaji": "tabemono",
+    "english": "food",
+    "tags": [
+      "Lesson 5",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763356
+  },
+  {
+    "id": "1791311763357",
+    "kanji": "果物",
+    "kana": "くだもの",
+    "romaji": "kudamono",
+    "english": "fruit",
+    "tags": [
+      "Lesson 5",
+      "object",
+      "food"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763357
+  },
+  {
+    "id": "1791311763358",
+    "kanji": "宿題",
+    "kana": "しゅくだい",
+    "romaji": "shukudai",
+    "english": "homework",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763358
+  },
+  {
+    "id": "1791311763359",
+    "kanji": "Lサイズ",
+    "kana": "えるさいず",
+    "romaji": "eru saizu",
+    "english": "size L",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763359
+  },
+  {
+    "id": "1791311763360",
+    "kanji": "お土産",
+    "kana": "おみやげ",
+    "romaji": "omiyage",
+    "english": "souvenir",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763360
+  },
+  {
+    "id": "1791311763361",
+    "kanji": "サーフィン",
+    "kana": "さーふぃん",
+    "romaji": "saafin",
+    "english": "surfing",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763361
+  },
+  {
+    "id": "1791311763362",
+    "kanji": "テスト",
+    "kana": "てすと",
+    "romaji": "tesuto",
+    "english": "test",
+    "tags": [
+      "Lesson 5",
+      "object"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311763362
+  },
+  {
+    "id": "1791311745986",
+    "kanji": "ちょっと",
+    "kana": "ちょっと",
+    "romaji": "chotto",
+    "english": "a little",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745986
+  },
+  {
+    "id": "1791311745987",
+    "kanji": "全然",
+    "kana": "ぜんぜん",
+    "romaji": "zenzen",
+    "english": "not at all",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745987
+  },
+  {
+    "id": "1791311745988",
+    "kanji": "あまり",
+    "kana": "あまり",
+    "romaji": "amari",
+    "english": "not much",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745988
+  },
+  {
+    "id": "1791311745989",
+    "kanji": "よく",
+    "kana": "よく",
+    "romaji": "yoku",
+    "english": "often; much",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745989
+  },
+  {
+    "id": "1791311745990",
+    "kanji": "時々",
+    "kana": "ときどき",
+    "romaji": "tokidoki",
+    "english": "sometimes",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745990
+  },
+  {
+    "id": "1791311745991",
+    "kanji": "たいてい",
+    "kana": "たいてい",
+    "romaji": "taitei",
+    "english": "usually",
+    "tags": [
+      "Lesson 3",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745991
+  },
+  {
+    "id": "1791311745992",
+    "kanji": "一人で",
+    "kana": "ひとりで",
+    "romaji": "hitoride",
+    "english": "alone",
+    "tags": [
+      "Lesson 4",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745992
+  },
+  {
+    "id": "1791311745993",
+    "kanji": "たくさん",
+    "kana": "たくさん",
+    "romaji": "takusan",
+    "english": "many; a lot",
+    "tags": [
+      "Lesson 4",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745993
+  },
+  {
+    "id": "1791311745994",
+    "kanji": "すごく",
+    "kana": "すごく",
+    "romaji": "sugoku",
+    "english": "extremely",
+    "tags": [
+      "Lesson 5",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745994
+  },
+  {
+    "id": "1791311745995",
+    "kanji": "とても",
+    "kana": "とても",
+    "romaji": "totemo",
+    "english": "very",
+    "tags": [
+      "Lesson 5",
+      "adverb"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311745995
+  },
+  {
+    "id": "1791311726156",
+    "kanji": "おいしい",
+    "kana": "おいしい",
+    "romaji": "oishii",
+    "english": "delicious",
+    "tags": [
+      "Lesson 2",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726156
+  },
+  {
+    "id": "1791311726157",
+    "kanji": "高い",
+    "kana": "たかい",
+    "romaji": "takai",
+    "english": "expensive; high",
+    "tags": [
+      "Lesson 2",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726157
+  },
+  {
+    "id": "1791311726158",
+    "kanji": "早い",
+    "kana": "はやい",
+    "romaji": "hayai",
+    "english": "early",
+    "tags": [
+      "Lesson 3",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726158
+  },
+  {
+    "id": "1791311726159",
+    "kanji": "いい",
+    "kana": "いい",
+    "romaji": "ii",
+    "english": "good",
+    "tags": [
+      "Lesson 3",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726159
+  },
+  {
+    "id": "1791311726160",
+    "kanji": "きれい（な）",
+    "kana": "きれい（な）",
+    "romaji": "kirei (na)",
+    "english": "beautiful; clean",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726160
+  },
+  {
+    "id": "1791311726161",
+    "kanji": "つまらない",
+    "kana": "つまらない",
+    "romaji": "tsumaranai",
+    "english": "boring",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726161
+  },
+  {
+    "id": "1791311726162",
+    "kanji": "忙しい",
+    "kana": "いそがしい",
+    "romaji": "isogashii",
+    "english": "busy (people/days)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726162
+  },
+  {
+    "id": "1791311726163",
+    "kanji": "寒い",
+    "kana": "さむい",
+    "romaji": "samui",
+    "english": "cold (weather—not used for things)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726163
+  },
+  {
+    "id": "1791311726164",
+    "kanji": "おいしい",
+    "kana": "おいしい",
+    "romaji": "oishii",
+    "english": "delicious",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726164
+  },
+  {
+    "id": "1791311726165",
+    "kanji": "難しい",
+    "kana": "むずかしい",
+    "romaji": "muzukashii",
+    "english": "difficult",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726165
+  },
+  {
+    "id": "1791311726166",
+    "kanji": "嫌い（な）",
+    "kana": "きらい（な）",
+    "romaji": "kirai (na)",
+    "english": "disgusted with; to dislike (~ga)",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726166
+  },
+  {
+    "id": "1791311726167",
+    "kanji": "優しい",
+    "kana": "やさしい",
+    "romaji": "yasashii",
+    "english": "easy (problem); kind (person)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726167
+  },
+  {
+    "id": "1791311726168",
+    "kanji": "好き（な）",
+    "kana": "すき（な）",
+    "romaji": "suki (na)",
+    "english": "fond of; to like (~ga)",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726168
+  },
+  {
+    "id": "1791311726169",
+    "kanji": "怖い",
+    "kana": "こわい",
+    "romaji": "kowai",
+    "english": "frightening",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726169
+  },
+  {
+    "id": "1791311726170",
+    "kanji": "楽しい",
+    "kana": "たのしい",
+    "romaji": "tanoshii",
+    "english": "fun",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726170
+  },
+  {
+    "id": "1791311726171",
+    "kanji": "かっこいい",
+    "kana": "かっこいい",
+    "romaji": "kakkoii",
+    "english": "good-looking (conjugates like ii)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726171
+  },
+  {
+    "id": "1791311726172",
+    "kanji": "元気（な）",
+    "kana": "げんき（な）",
+    "romaji": "genki (na)",
+    "english": "healthy; energetic",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726172
+  },
+  {
+    "id": "1791311726173",
+    "kanji": "熱い",
+    "kana": "あつい",
+    "romaji": "atsui",
+    "english": "hot (thing)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726173
+  },
+  {
+    "id": "1791311726174",
+    "kanji": "暑い",
+    "kana": "あつい",
+    "romaji": "atsui",
+    "english": "hot (weather)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726174
+  },
+  {
+    "id": "1791311726175",
+    "kanji": "安い",
+    "kana": "やすい",
+    "romaji": "yasui",
+    "english": "inexpensive; cheap (thing)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726175
+  },
+  {
+    "id": "1791311726176",
+    "kanji": "面白い",
+    "kana": "おもしろい",
+    "romaji": "omoshiroi",
+    "english": "interesting; funny",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726176
+  },
+  {
+    "id": "1791311726177",
+    "kanji": "大きい",
+    "kana": "おおきい",
+    "romaji": "ookii",
+    "english": "large",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726177
+  },
+  {
+    "id": "1791311726178",
+    "kanji": "賑やか（な）",
+    "kana": "にぎやか（な）",
+    "romaji": "nigiyaka (na)",
+    "english": "lively",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726178
+  },
+  {
+    "id": "1791311726179",
+    "kanji": "新しい",
+    "kana": "あたらしい",
+    "romaji": "atarashii",
+    "english": "new",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726179
+  },
+  {
+    "id": "1791311726180",
+    "kanji": "暇（な）",
+    "kana": "ひま（な）",
+    "romaji": "hima (na)",
+    "english": "not busy; free (time)",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726180
+  },
+  {
+    "id": "1791311726181",
+    "kanji": "古い",
+    "kana": "ふるい",
+    "romaji": "furui",
+    "english": "old (thing—not used for people)",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726181
+  },
+  {
+    "id": "1791311726182",
+    "kanji": "静か（な）",
+    "kana": "しずか（な）",
+    "romaji": "shizuka (na)",
+    "english": "quiet",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726182
+  },
+  {
+    "id": "1791311726183",
+    "kanji": "小さい",
+    "kana": "ちいさい",
+    "romaji": "chiisai",
+    "english": "small",
+    "tags": [
+      "Lesson 5",
+      "i-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726183
+  },
+  {
+    "id": "1791311726184",
+    "kanji": "大嫌い（な）",
+    "kana": "だいきらい（な）",
+    "romaji": "daikirai (na)",
+    "english": "to hate (~ga)",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726184
+  },
+  {
+    "id": "1791311726185",
+    "kanji": "大好き（な）",
+    "kana": "だいすき（な）",
+    "romaji": "daisuki (na)",
+    "english": "very fond of; to love (~ga)",
+    "tags": [
+      "Lesson 5",
+      "na-adjective",
+      "adjective"
+    ],
+    "notes": "",
+    "sentences": [],
+    "createdAt": 1791311726185
+  }
+]
