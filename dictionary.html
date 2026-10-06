@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kotoba Japanese Dictionary Manager</title>
+    <title>Kotoba Japanese Dictionary Viewer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Japanese & Clean Sans-serif -->
@@ -65,39 +65,18 @@
     <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
+                <a href="index.html" class="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors flex items-center space-x-1 text-sm font-medium" title="Back to Portal">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span class="hidden sm:inline">Portal</span>
+                </a>
+                <div class="h-5 w-px bg-slate-200"></div>
                 <div class="w-10 h-10 rounded-lg bg-vermilion-500 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-vermilion-500/20">
                     和
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg text-slate-900 leading-none">Kotoba Dictionary Manager</h1>
-                    <p class="text-xs text-slate-500 mt-0.5">Automated JSON Loader & GitHub Pages Ready</p>
+                    <h1 class="font-bold text-lg text-slate-900 leading-none">Kotoba Dictionary</h1>
+                    <p class="text-xs text-slate-500 mt-0.5">Japanese Vocabulary Viewer</p>
                 </div>
-            </div>
-
-            <!-- Mode Indicator & Header Actions -->
-            <div class="flex items-center space-x-2 sm:space-x-3">
-                <!-- Read Only Badge -->
-                <div id="readOnlyBadge" class="hidden items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-                    <i class="fa-solid fa-lock mr-1.5"></i> Read-Only Mode
-                </div>
-
-                <!-- CSV Import Control (Edit Mode Only) -->
-                <button id="importCsvBtn" onclick="openCsvModal()" class="inline-flex items-center px-3.5 py-2 border border-slate-300 shadow-sm text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-colors">
-                    <i class="fa-solid fa-file-csv mr-2 text-emerald-600"></i>
-                    <span class="hidden sm:inline">Import CSV</span>
-                </button>
-
-                <!-- Export Control -->
-                <button id="exportBtn" onclick="exportJSON()" class="inline-flex items-center px-3.5 py-2 border border-slate-300 shadow-sm text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 transition-colors">
-                    <i class="fa-solid fa-download mr-2 text-vermilion-500"></i>
-                    <span class="hidden sm:inline">Export JSON</span>
-                </button>
-
-                <!-- Add Word Control -->
-                <button id="addWordBtn" onclick="openAddModal()" class="inline-flex items-center px-3.5 py-2 border border-transparent shadow-md text-sm font-medium rounded-lg text-white bg-vermilion-500 hover:bg-vermilion-600 transition-colors">
-                    <i class="fa-solid fa-plus mr-1.5"></i>
-                    <span>Add Word</span>
-                </button>
             </div>
         </div>
     </header>
@@ -212,30 +191,20 @@
                     <i class="fa-solid fa-book-open"></i>
                 </div>
                 <h3 class="text-lg font-semibold text-slate-800 mb-1">No Entries Found</h3>
-                <p class="text-sm text-slate-500 mb-4 max-w-sm mx-auto">Try adjusting your search query, clearing tag filters, or adding a new entry.</p>
-                <button id="emptyAddBtn" onclick="openAddModal()" class="inline-flex items-center px-4 py-2 bg-vermilion-500 text-white text-sm font-medium rounded-lg hover:bg-vermilion-600 transition-colors">
-                    <i class="fa-solid fa-plus mr-2"></i> Add First Word
-                </button>
+                <p class="text-sm text-slate-500 max-w-sm mx-auto">Try adjusting your search query or clearing tag filters.</p>
             </div>
 
         </section>
     </main>
 
+    <!-- Word Detail Modal -->
     <div id="detailModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" onclick="if(event.target === this) closeDetailModal()">
         <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
             <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                 <span id="detailRomaji" class="text-xs font-mono uppercase tracking-wider text-slate-400"></span>
-                <div class="flex items-center space-x-2">
-                    <button id="detailEditBtn" onclick="editFromDetail()" class="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg text-xs transition-colors">
-                        <i class="fa-solid fa-pen-to-square mr-1"></i> Edit
-                    </button>
-                    <button id="detailDeleteBtn" onclick="deleteFromDetail()" class="p-2 text-slate-400 hover:text-red-600 hover:bg-slate-100 rounded-lg text-xs transition-colors">
-                        <i class="fa-solid fa-trash-can mr-1"></i> Delete
-                    </button>
-                    <button onclick="closeDetailModal()" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg">
-                        <i class="fa-solid fa-xmark text-lg"></i>
-                    </button>
-                </div>
+                <button onclick="closeDetailModal()" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
             </div>
 
             <div class="p-6 space-y-6 overflow-y-auto flex-grow">
@@ -264,159 +233,6 @@
         </div>
     </div>
 
-    <div id="wordModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
-            <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
-                <h3 id="modalTitle" class="text-base font-bold text-slate-800">Add New Japanese Word</h3>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <form id="wordForm" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4 overflow-y-auto flex-grow">
-                <input type="hidden" id="wordId">
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Kanji <span class="text-slate-400 font-normal">(Optional)</span></label>
-                        <input type="text" id="kanjiInput" placeholder="例: 日本" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none jp-font">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Kana <span class="text-vermilion-500">*</span></label>
-                        <input type="text" id="kanaInput" required placeholder="例: にほん" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none jp-font">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Romaji <span class="text-vermilion-500">*</span></label>
-                        <input type="text" id="romajiInput" required placeholder="e.g. nihon" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">English Meaning <span class="text-vermilion-500">*</span></label>
-                        <input type="text" id="englishInput" required placeholder="e.g. Japan" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Tags <span class="text-slate-400 font-normal">(Comma separated)</span></label>
-                    <input type="text" id="tagsInput" placeholder="e.g. N5, Noun, Country" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none">
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="block text-xs font-semibold text-slate-600 uppercase">Example Sentences</label>
-                        <button type="button" onclick="addSentenceRow()" class="text-xs text-vermilion-600 hover:text-vermilion-700 font-medium flex items-center">
-                            <i class="fa-solid fa-plus mr-1"></i> Add Sentence
-                        </button>
-                    </div>
-                    <div id="sentenceList" class="space-y-2"></div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Notes / Grammar Details</label>
-                    <textarea id="notesInput" rows="2" placeholder="e.g. Context, grammar notes, pitch accent, etc." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none jp-font"></textarea>
-                </div>
-
-                <div class="pt-3 flex justify-end space-x-3 border-t border-slate-100 flex-shrink-0">
-                    <button type="button" onclick="closeModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-vermilion-500 hover:bg-vermilion-600 text-white rounded-lg text-sm font-medium transition-colors shadow-sm">Save Entry</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="csvModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
-            <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-file-csv text-emerald-600 text-xl"></i>
-                    <h3 class="text-base font-bold text-slate-800">CSV Mass Import</h3>
-                </div>
-                <button onclick="closeCsvModal()" class="text-slate-400 hover:text-slate-600 p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <div class="p-6 space-y-5 overflow-y-auto flex-grow">
-                <!-- CSV Column Specs Info -->
-                <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl text-xs text-slate-600">
-                    <p class="font-semibold text-slate-800 mb-1"><i class="fa-solid fa-circle-info mr-1 text-sky-500"></i> Expected CSV Column Order:</p>
-                    <code class="bg-white px-2 py-1 rounded border border-slate-200 block font-mono text-[11px] text-slate-700 overflow-x-auto my-1">
-                        English, Kanji, Kana, Romaji, Tag1, Tag2, Tag3...
-                    </code>
-                    <p class="mt-1 text-slate-500">First 4 columns are English, Kanji, Kana, and Romaji. Any subsequent non-empty columns are added as individual tags.</p>
-                </div>
-
-                <!-- Tabs: Upload File vs Paste Text -->
-                <div class="border-b border-slate-200 flex space-x-4">
-                    <button type="button" id="csvTabPasteBtn" onclick="switchCsvTab('paste')" class="pb-2 text-xs font-bold border-b-2 border-emerald-600 text-emerald-600 flex items-center space-x-1.5">
-                        <i class="fa-solid fa-paste"></i>
-                        <span>Paste CSV Text</span>
-                    </button>
-                    <button type="button" id="csvTabUploadBtn" onclick="switchCsvTab('upload')" class="pb-2 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center space-x-1.5">
-                        <i class="fa-solid fa-file-arrow-up"></i>
-                        <span>Upload CSV File</span>
-                    </button>
-                </div>
-
-                <!-- Tab 1: Paste Text Input -->
-                <div id="csvTabPasteContent" class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-600 uppercase">Paste CSV Lines Below</label>
-                    <textarea id="csvTextInput" oninput="handleCsvTextInput()" rows="5" placeholder="Japan,日本,にほん,nihon,N5,Country&#10;eat,食べる,たべる,taberu,N5,Verb" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-mono focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
-                </div>
-
-                <!-- Tab 2: File Upload Input -->
-                <div id="csvTabUploadContent" class="space-y-2 hidden">
-                    <label class="block text-xs font-semibold text-slate-600 uppercase">Select CSV File from Disk</label>
-                    <input type="file" id="csvFileInput" accept=".csv" onchange="handleCsvFileSelect(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer">
-                </div>
-
-                <!-- Import Mode Selection -->
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Import Action Mode</label>
-                    <div class="grid grid-cols-2 gap-3">
-                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
-                            <input type="radio" name="csvImportMode" value="append" checked class="text-emerald-600 focus:ring-emerald-500">
-                            <span class="ml-2 text-xs font-medium text-slate-700">Append to dictionary</span>
-                        </label>
-                        <label class="flex items-center p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
-                            <input type="radio" name="csvImportMode" value="replace" class="text-emerald-600 focus:ring-emerald-500">
-                            <span class="ml-2 text-xs font-medium text-slate-700">Replace/Overwrite dictionary</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- CSV Live Preview Table -->
-                <div id="csvPreviewArea" class="hidden border border-slate-200 rounded-xl overflow-hidden">
-                    <div class="bg-slate-100 px-3 py-2 text-xs font-bold text-slate-600 flex justify-between items-center">
-                        <span>Parsed Preview (<span id="csvPreviewCount">0</span> entries found)</span>
-                        <span class="text-[11px] text-slate-400 font-normal">First 5 rows shown</span>
-                    </div>
-                    <div class="max-h-36 overflow-y-auto">
-                        <table class="w-full text-left text-xs text-slate-600">
-                            <thead class="bg-slate-50 border-b border-slate-200 text-[10px] text-slate-400 uppercase">
-                                <tr>
-                                    <th class="p-2">English</th>
-                                    <th class="p-2">Kanji</th>
-                                    <th class="p-2">Kana</th>
-                                    <th class="p-2">Romaji</th>
-                                    <th class="p-2">Tags</th>
-                                </tr>
-                            </thead>
-                            <tbody id="csvPreviewTableBody" class="divide-y divide-slate-100"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-3 flex-shrink-0">
-                <button type="button" onclick="closeCsvModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Cancel</button>
-                <button id="confirmCsvImportBtn" disabled onclick="executeCsvImport()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg text-sm font-medium transition-colors shadow-sm">Process Import</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Notification Toast -->
     <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-lg shadow-lg flex items-center space-x-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50">
         <i class="fa-solid fa-circle-check text-green-400" id="toastIcon"></i>
@@ -424,9 +240,7 @@
     </div>
 
     <script>
-        // CONFIGURATION: Set READ_ONLY_MODE to true to lock edit capabilities
         const CONFIG = {
-            readOnlyMode: true,
             jsonFileName: 'dictionary.json'
         };
 
@@ -478,31 +292,15 @@
         // State Management Variables
         let dictionary = [];
         let activeTagFilters = [];
-        let tagLogicMode = "AND"; // "AND" (default) or "OR"
+        let tagLogicMode = "AND";
         let currentSearchQuery = "";
         let viewMode = "grid";
         let currentActiveEntryId = null;
-        let parsedCsvEntries = [];
-        let currentCsvTab = "paste"; // "paste" or "upload"
 
         // Application Initialization
         window.addEventListener('DOMContentLoaded', async () => {
-            applyConfigSettings();
             await loadDictionaryFromSource();
         });
-
-        function applyConfigSettings() {
-            if (CONFIG.readOnlyMode) {
-                document.getElementById('readOnlyBadge').classList.remove('hidden');
-                document.getElementById('readOnlyBadge').classList.add('flex');
-                document.getElementById('addWordBtn').classList.add('hidden');
-                document.getElementById('importCsvBtn').classList.add('hidden');
-                document.getElementById('emptyAddBtn').classList.add('hidden');
-                document.getElementById('exportBtn').classList.add('hidden');
-                document.getElementById('detailEditBtn').classList.add('hidden');
-                document.getElementById('detailDeleteBtn').classList.add('hidden');
-            }
-        }
 
         async function loadDictionaryFromSource() {
             try {
@@ -549,14 +347,8 @@
             });
         }
 
-        function saveToLocalStorage() {
-            if (CONFIG.readOnlyMode) return;
-            localStorage.setItem('kotoba_dict', JSON.stringify(dictionary));
-        }
-
         function getFilteredEntries() {
             return dictionary.filter(item => {
-                // Multi-Tag Filtering Logic (AND vs OR)
                 if (activeTagFilters.length > 0) {
                     const itemTags = item.tags || [];
                     if (tagLogicMode === "AND") {
@@ -568,7 +360,6 @@
                     }
                 }
 
-                // Query Search (Kanji, Kana, Romaji, English, Notes, Tags, Sentences)
                 if (currentSearchQuery.trim() !== '') {
                     const query = currentSearchQuery.toLowerCase().trim();
                     const matchKanji = item.kanji && item.kanji.toLowerCase().includes(query);
@@ -654,16 +445,6 @@
                 <div>
                     <div class="flex justify-between items-start mb-2">
                         <span class="text-xs text-slate-400 font-mono">${escapeHtml(item.romaji || '')}</span>
-                        ${!CONFIG.readOnlyMode ? `
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity flex space-x-1">
-                                <button onclick="editEntry('${item.id}')" title="Edit" class="p-1 text-slate-400 hover:text-slate-700 rounded">
-                                    <i class="fa-solid fa-pen-to-square text-xs"></i>
-                                </button>
-                                <button onclick="deleteEntry('${item.id}')" title="Delete" class="p-1 text-slate-400 hover:text-red-600 rounded">
-                                    <i class="fa-solid fa-trash-can text-xs"></i>
-                                </button>
-                            </div>
-                        ` : ''}
                     </div>
 
                     <div class="mb-3">
@@ -677,8 +458,7 @@
 
                     ${firstSentence ? `
                         <div class="bg-slate-50 border-l-2 border-vermilion-500 p-2.5 rounded-r text-xs text-slate-600 mb-3 jp-font">
-                            <div>${escapeHtml(firstSentence.japanese)}</div>
-                            ${firstSentence.english ? `<div class="text-[11px] text-slate-400 mt-0.5">${escapeHtml(firstSentence.english)}</div>` : ''}
+                            <div>${escapeHtml(firstSentence.japanese)}</div>${firstSentence.english ? `<div class="text-[11px] text-slate-400 mt-0.5">${escapeHtml(firstSentence.english)}</div>` : ''}
                         </div>
                     ` : ''}
                 </div>
@@ -721,16 +501,6 @@
                     <div class="flex flex-wrap gap-1">
                         ${tagsHtml}
                     </div>
-                    ${!CONFIG.readOnlyMode ? `
-                        <div class="flex space-x-1 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                            <button onclick="editEntry('${item.id}')" title="Edit" class="p-1 text-slate-400 hover:text-slate-700">
-                                <i class="fa-solid fa-pen-to-square text-xs"></i>
-                            </button>
-                            <button onclick="deleteEntry('${item.id}')" title="Delete" class="p-1 text-slate-400 hover:text-red-600">
-                                <i class="fa-solid fa-trash-can text-xs"></i>
-                            </button>
-                        </div>
-                    ` : ''}
                 </div>
             `;
             return row;
@@ -820,177 +590,6 @@
             }
         }
 
-        function openCsvModal() {
-            if (CONFIG.readOnlyMode) return;
-            document.getElementById('csvFileInput').value = '';
-            document.getElementById('csvTextInput').value = '';
-            document.getElementById('csvPreviewArea').classList.add('hidden');
-            document.getElementById('confirmCsvImportBtn').disabled = true;
-            parsedCsvEntries = [];
-            switchCsvTab('paste');
-            document.getElementById('csvModal').classList.remove('hidden');
-        }
-
-        function closeCsvModal() {
-            document.getElementById('csvModal').classList.add('hidden');
-        }
-
-        function switchCsvTab(tab) {
-            currentCsvTab = tab;
-            const pasteBtn = document.getElementById('csvTabPasteBtn');
-            const uploadBtn = document.getElementById('csvTabUploadBtn');
-            const pasteContent = document.getElementById('csvTabPasteContent');
-            const uploadContent = document.getElementById('csvTabUploadContent');
-
-            if (tab === 'paste') {
-                pasteBtn.className = "pb-2 text-xs font-bold border-b-2 border-emerald-600 text-emerald-600 flex items-center space-x-1.5";
-                uploadBtn.className = "pb-2 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center space-x-1.5";
-                pasteContent.classList.remove('hidden');
-                uploadContent.classList.add('hidden');
-                handleCsvTextInput();
-            } else {
-                uploadBtn.className = "pb-2 text-xs font-bold border-b-2 border-emerald-600 text-emerald-600 flex items-center space-x-1.5";
-                pasteBtn.className = "pb-2 text-xs font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center space-x-1.5";
-                uploadContent.classList.remove('hidden');
-                pasteContent.classList.add('hidden');
-                parsedCsvEntries = [];
-                renderCsvPreview();
-            }
-        }
-
-        function parseCSVLine(text) {
-            const result = [];
-            let current = '';
-            let inQuotes = false;
-
-            for (let i = 0; i < text.length; i++) {
-                const char = text[i];
-                if (char === '"') {
-                    if (inQuotes && text[i + 1] === '"') {
-                        current += '"';
-                        i++;
-                    } else {
-                        inQuotes = !inQuotes;
-                    }
-                } else if (char === ',' && !inQuotes) {
-                    result.push(current.trim());
-                    current = '';
-                } else {
-                    current += char;
-                }
-            }
-            result.push(current.trim());
-            return result;
-        }
-
-        function parseCsvRawContent(content) {
-            const lines = content.split(/\r\n|\n/);
-            const entries = [];
-
-            lines.forEach((line, index) => {
-                if (!line.trim()) return;
-                const cols = parseCSVLine(line);
-
-                // Skip header row if detected
-                if (index === 0 && cols[0].toLowerCase() === 'english' && cols[2].toLowerCase() === 'kana') {
-                    return;
-                }
-
-                if (cols.length >= 3) {
-                    const english = cols[0] || '';
-                    const kanji = cols[1] || '';
-                    const kana = cols[2] || '';
-                    const romaji = cols[3] || '';
-                    const tags = cols.slice(4).filter(t => t && t.trim().length > 0);
-
-                    if (english || kana) {
-                        entries.push({ english, kanji, kana, romaji, tags });
-                    }
-                }
-            });
-
-            return entries;
-        }
-
-        function handleCsvTextInput() {
-            const rawText = document.getElementById('csvTextInput').value;
-            parsedCsvEntries = parseCsvRawContent(rawText);
-            renderCsvPreview();
-        }
-
-        function handleCsvFileSelect(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                parsedCsvEntries = parseCsvRawContent(e.target.result);
-                renderCsvPreview();
-            };
-            reader.readAsText(file);
-        }
-
-        function renderCsvPreview() {
-            const previewArea = document.getElementById('csvPreviewArea');
-            const previewBody = document.getElementById('csvPreviewTableBody');
-            const countLabel = document.getElementById('csvPreviewCount');
-            const confirmBtn = document.getElementById('confirmCsvImportBtn');
-
-            previewBody.innerHTML = '';
-            countLabel.innerText = parsedCsvEntries.length;
-
-            if (parsedCsvEntries.length === 0) {
-                previewArea.classList.add('hidden');
-                confirmBtn.disabled = true;
-                return;
-            }
-
-            previewArea.classList.remove('hidden');
-            confirmBtn.disabled = false;
-
-            const sample = parsedCsvEntries.slice(0, 5);
-            sample.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="p-2 font-medium text-slate-800">${escapeHtml(row.english)}</td>
-                    <td class="p-2 jp-font">${escapeHtml(row.kanji)}</td>
-                    <td class="p-2 jp-font">${escapeHtml(row.kana)}</td>
-                    <td class="p-2 font-mono">${escapeHtml(row.romaji)}</td>
-                    <td class="p-2">${row.tags.map(t => `<span class="bg-slate-200 text-slate-700 px-1 rounded text-[10px] mr-1">#${escapeHtml(t)}</span>`).join('')}</td>
-                `;
-                previewBody.appendChild(tr);
-            });
-        }
-
-        function executeCsvImport() {
-            if (CONFIG.readOnlyMode || parsedCsvEntries.length === 0) return;
-
-            const mode = document.querySelector('input[name="csvImportMode"]:checked').value;
-            const formattedEntries = parsedCsvEntries.map((item, idx) => ({
-                id: (Date.now() + idx).toString(),
-                kanji: item.kanji,
-                kana: item.kana,
-                romaji: item.romaji,
-                english: item.english,
-                tags: item.tags,
-                notes: "",
-                sentences: [],
-                createdAt: Date.now() + idx
-            }));
-
-            if (mode === 'replace') {
-                dictionary = formattedEntries;
-                showToast(`Replaced dictionary with ${formattedEntries.length} CSV entries`);
-            } else {
-                dictionary = [...formattedEntries, ...dictionary];
-                showToast(`Appended ${formattedEntries.length} CSV entries`);
-            }
-
-            saveToLocalStorage();
-            renderDictionary();
-            closeCsvModal();
-        }
-
         function openDetailModal(id) {
             const item = dictionary.find(entry => entry.id === id);
             if (!item) return;
@@ -1039,169 +638,6 @@
             document.getElementById('detailModal').classList.add('hidden');
         }
 
-        function editFromDetail() {
-            if (CONFIG.readOnlyMode || !currentActiveEntryId) return;
-            closeDetailModal();
-            editEntry(currentActiveEntryId);
-        }
-
-        function deleteFromDetail() {
-            if (CONFIG.readOnlyMode || !currentActiveEntryId) return;
-            deleteEntry(currentActiveEntryId);
-            closeDetailModal();
-        }
-
-        function addSentenceRow(japanese = '', english = '') {
-            const container = document.getElementById('sentenceList');
-            const row = document.createElement('div');
-            row.className = "flex items-start space-x-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 sentence-row";
-
-            row.innerHTML = `
-                <div class="flex-grow space-y-1.5">
-                    <input type="text" value="${escapeHtml(japanese)}" placeholder="Japanese sentence (例: 日本語が好きです。)" class="w-full px-2.5 py-1.5 border border-slate-300 rounded text-xs focus:ring-1 focus:ring-vermilion-500 focus:outline-none jp-font sentence-jp">
-                    <input type="text" value="${escapeHtml(english)}" placeholder="English translation (e.g. I like Japanese.)" class="w-full px-2.5 py-1.5 border border-slate-300 rounded text-xs focus:ring-1 focus:ring-vermilion-500 focus:outline-none sentence-en">
-                </div>
-                <button type="button" onclick="this.closest('.sentence-row').remove()" class="text-slate-400 hover:text-red-500 p-1">
-                    <i class="fa-solid fa-xmark text-xs"></i>
-                </button>
-            `;
-            container.appendChild(row);
-        }
-
-        function openAddModal() {
-            if (CONFIG.readOnlyMode) return;
-            document.getElementById('modalTitle').innerText = "Add New Japanese Word";
-            document.getElementById('wordId').value = "";
-            document.getElementById('wordForm').reset();
-            document.getElementById('sentenceList').innerHTML = "";
-            addSentenceRow();
-            document.getElementById('wordModal').classList.remove('hidden');
-        }
-
-        function editEntry(id) {
-            if (CONFIG.readOnlyMode) return;
-            const item = dictionary.find(entry => entry.id === id);
-            if (!item) return;
-
-            document.getElementById('modalTitle').innerText = "Edit Word Entry";
-            document.getElementById('wordId').value = item.id;
-            document.getElementById('kanjiInput').value = item.kanji || '';
-            document.getElementById('kanaInput').value = item.kana || '';
-            document.getElementById('romajiInput').value = item.romaji || '';
-            document.getElementById('englishInput').value = item.english || '';
-            document.getElementById('tagsInput').value = (item.tags || []).join(', ');
-            document.getElementById('notesInput').value = item.notes || '';
-
-            const sentenceList = document.getElementById('sentenceList');
-            sentenceList.innerHTML = "";
-            if (item.sentences && item.sentences.length > 0) {
-                item.sentences.forEach(s => addSentenceRow(s.japanese, s.english));
-            } else {
-                addSentenceRow();
-            }
-
-            document.getElementById('wordModal').classList.remove('hidden');
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            if (CONFIG.readOnlyMode) return;
-
-            const id = document.getElementById('wordId').value;
-            const kanji = document.getElementById('kanjiInput').value.trim();
-            const kana = document.getElementById('kanaInput').value.trim();
-            const romaji = document.getElementById('romajiInput').value.trim();
-            const english = document.getElementById('englishInput').value.trim();
-            const tagsRaw = document.getElementById('tagsInput').value;
-            const notes = document.getElementById('notesInput').value.trim();
-
-            const tags = tagsRaw
-                .split(',')
-                .map(t => t.trim())
-                .filter(t => t.length > 0);
-
-            const sentenceRows = document.querySelectorAll('.sentence-row');
-            const sentences = [];
-            sentenceRows.forEach(row => {
-                const jp = row.querySelector('.sentence-jp').value.trim();
-                const en = row.querySelector('.sentence-en').value.trim();
-                if (jp.length > 0) {
-                    sentences.push({ japanese: jp, english: en });
-                }
-            });
-
-            if (id) {
-                const index = dictionary.findIndex(item => item.id === id);
-                if (index !== -1) {
-                    dictionary[index] = {
-                        ...dictionary[index],
-                        kanji,
-                        kana,
-                        romaji,
-                        english,
-                        tags,
-                        notes,
-                        sentences
-                    };
-                    showToast("Word updated successfully!");
-                }
-            } else {
-                const newEntry = {
-                    id: Date.now().toString(),
-                    kanji,
-                    kana,
-                    romaji,
-                    english,
-                    tags,
-                    notes,
-                    sentences,
-                    createdAt: Date.now()
-                };
-                dictionary.unshift(newEntry);
-                showToast("New word added!");
-            }
-
-            saveToLocalStorage();
-            renderDictionary();
-            closeModal();
-        }
-
-        function deleteEntry(id) {
-            if (CONFIG.readOnlyMode) return;
-            if (confirm("Are you sure you want to delete this word entry?")) {
-                dictionary = dictionary.filter(item => item.id !== id);
-                saveToLocalStorage();
-                renderDictionary();
-                showToast("Entry deleted");
-            }
-        }
-
-        function exportJSON() {
-            if (CONFIG.readOnlyMode) return;
-
-            const cleanData = dictionary.map(({ id, kanji, kana, romaji, english, tags, notes, sentences, createdAt }) => ({
-                id,
-                kanji,
-                kana,
-                romaji,
-                english,
-                tags,
-                notes,
-                sentences: sentences || [],
-                createdAt
-            }));
-
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cleanData, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", CONFIG.jsonFileName);
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-
-            showToast(`${CONFIG.jsonFileName} exported!`);
-        }
-
         function handleSearch() {
             const input = document.getElementById('searchInput');
             currentSearchQuery = input.value;
@@ -1234,10 +670,6 @@
                 gridBtn.className = "flex-1 py-1.5 text-xs font-medium rounded-md transition-all text-slate-600 hover:text-slate-900 flex items-center justify-center space-x-1";
             }
             renderDictionary();
-        }
-
-        function closeModal() {
-            document.getElementById('wordModal').classList.add('hidden');
         }
 
         function copyToClipboard(text) {
