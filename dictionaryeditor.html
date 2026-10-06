@@ -102,6 +102,24 @@
         </div>
     </header>
 
+    <!-- Floating Batch Actions Bar -->
+    <div id="batchActionBar" class="hidden sticky top-16 z-20 bg-slate-900 text-white shadow-xl transition-all border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="bg-vermilion-500 text-white text-xs font-bold px-2.5 py-1 rounded-full" id="selectedCountBadge">0 selected</span>
+                <span class="text-xs text-slate-300 hidden sm:inline">Select items to batch edit tags</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button onclick="selectAllVisible(true)" class="text-xs text-slate-300 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition-colors">Select All</button>
+                <button onclick="selectAllVisible(false)" class="text-xs text-slate-300 hover:text-white px-2 py-1 rounded hover:bg-slate-800 transition-colors">Deselect All</button>
+                <div class="h-4 w-px bg-slate-700 mx-1"></div>
+                <button onclick="openBatchTagModal()" class="inline-flex items-center px-3 py-1.5 bg-vermilion-500 hover:bg-vermilion-600 text-white rounded-lg text-xs font-semibold shadow transition-colors">
+                    <i class="fa-solid fa-tags mr-1.5"></i> Edit Tags
+                </button>
+            </div>
+        </div>
+    </div>
+
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6">
 
         <!-- Left Sidebar: Filters & Stats -->
@@ -221,6 +239,7 @@
         </section>
     </main>
 
+    <!-- Detail Modal -->
     <div id="detailModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" onclick="if(event.target === this) closeDetailModal()">
         <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
             <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
@@ -264,6 +283,7 @@
         </div>
     </div>
 
+    <!-- Word Form Modal -->
     <div id="wordModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
             <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
@@ -326,6 +346,50 @@
         </div>
     </div>
 
+    <!-- Batch Tag Editing Modal -->
+    <div id="batchTagModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full overflow-hidden transform transition-all">
+            <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+                <h3 class="text-base font-bold text-slate-800">Batch Tag Editing (<span id="batchCountModalLabel">0</span> items)</h3>
+                <button onclick="closeBatchTagModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-4">
+                <!-- Operation Selector -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Batch Action</label>
+                    <select id="batchActionSelect" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none">
+                        <option value="add">Add tag(s) to selected items</option>
+                        <option value="remove">Remove tag(s) from selected items</option>
+                    </select>
+                </div>
+
+                <!-- Existing Tag Selector Chips -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-2">Select Existing Tags</label>
+                    <div id="batchExistingTagsList" class="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto border border-slate-200 p-2.5 rounded-lg bg-slate-50">
+                        <!-- Dynamic Checkbox Chips -->
+                    </div>
+                </div>
+
+                <!-- Create New Tag Input -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Or Create & Add New Tag(s)</label>
+                    <input type="text" id="batchNewTagsInput" placeholder="Comma separated, e.g. Genki-L1, JLPT-N5" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-vermilion-500 focus:outline-none">
+                    <p class="text-[11px] text-slate-400 mt-1">New tags will automatically be added to your dictionary's unique tag list.</p>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-3">
+                <button type="button" onclick="closeBatchTagModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">Cancel</button>
+                <button type="button" onclick="executeBatchTagUpdate()" class="px-4 py-2 bg-vermilion-500 hover:bg-vermilion-600 text-white rounded-lg text-sm font-medium transition-colors shadow-sm">Apply Batch Tags</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CSV Modal -->
     <div id="csvModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden transform transition-all">
             <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
@@ -438,7 +502,7 @@
                 kana: "にほんご",
                 romaji: "nihongo",
                 english: "Japanese language",
-                tags: ["N5", "Noun", "Language"],
+                tags: ["N5", "Noun", "Language", "Genki-L1"],
                 notes: "Common language spoken in Japan.",
                 sentences: [
                     { japanese: "日本語を勉強しています。", english: "I am studying Japanese." },
@@ -452,7 +516,7 @@
                 kana: "たべる",
                 romaji: "taberu",
                 english: "to eat",
-                tags: ["N5", "Verb", "Ichidan"],
+                tags: ["N5", "Verb", "Ichidan", "Genki-L3"],
                 notes: "Transitive verb.",
                 sentences: [
                     { japanese: "りんごを食べる。", english: "Eat an apple." },
@@ -477,6 +541,7 @@
 
         // State Management Variables
         let dictionary = [];
+        let selectedEntryIds = new Set();
         let activeTagFilters = [];
         let tagLogicMode = "AND"; // "AND" (default) or "OR"
         let currentSearchQuery = "";
@@ -609,6 +674,7 @@
 
             renderTagsSidebar(uniqueTags);
             updateActiveFiltersBanner();
+            updateBatchActionBar();
 
             if (entries.length === 0) {
                 emptyState.classList.remove('hidden');
@@ -633,11 +699,112 @@
             }
         }
 
+        function toggleEntrySelection(id, event) {
+            if (event) event.stopPropagation();
+            if (selectedEntryIds.has(id)) {
+                selectedEntryIds.delete(id);
+            } else {
+                selectedEntryIds.add(id);
+            }
+            updateBatchActionBar();
+            renderDictionary();
+        }
+
+        function selectAllVisible(select) {
+            const visible = getFilteredEntries();
+            if (select) {
+                visible.forEach(e => selectedEntryIds.add(e.id));
+            } else {
+                visible.forEach(e => selectedEntryIds.delete(e.id));
+            }
+            updateBatchActionBar();
+            renderDictionary();
+        }
+
+        function updateBatchActionBar() {
+            const bar = document.getElementById('batchActionBar');
+            const countLabel = document.getElementById('selectedCountBadge');
+
+            if (CONFIG.readOnlyMode || selectedEntryIds.size === 0) {
+                bar.classList.add('hidden');
+            } else {
+                bar.classList.remove('hidden');
+                countLabel.innerText = `${selectedEntryIds.size} selected`;
+            }
+        }
+
+        function openBatchTagModal() {
+            if (CONFIG.readOnlyMode || selectedEntryIds.size === 0) return;
+
+            document.getElementById('batchCountModalLabel').innerText = selectedEntryIds.size;
+            document.getElementById('batchNewTagsInput').value = '';
+
+            const uniqueTags = Array.from(new Set(dictionary.flatMap(item => item.tags || []))).sort();
+            const tagsContainer = document.getElementById('batchExistingTagsList');
+            tagsContainer.innerHTML = '';
+
+            if (uniqueTags.length === 0) {
+                tagsContainer.innerHTML = '<span class="text-xs text-slate-400 italic">No existing tags</span>';
+            } else {
+                uniqueTags.forEach(tag => {
+                    const label = document.createElement('label');
+                    label.className = "inline-flex items-center bg-white border border-slate-200 px-2 py-1 rounded text-xs cursor-pointer hover:bg-slate-100";
+                    label.innerHTML = `
+                        <input type="checkbox" value="${escapeHtml(tag)}" class="batch-tag-checkbox text-vermilion-500 rounded border-slate-300 focus:ring-vermilion-500 mr-1.5">
+                        <span>#${escapeHtml(tag)}</span>
+                    `;
+                    tagsContainer.appendChild(label);
+                });
+            }
+
+            document.getElementById('batchTagModal').classList.remove('hidden');
+        }
+
+        function closeBatchTagModal() {
+            document.getElementById('batchTagModal').classList.add('hidden');
+        }
+
+        function executeBatchTagUpdate() {
+            if (CONFIG.readOnlyMode || selectedEntryIds.size === 0) return;
+
+            const action = document.getElementById('batchActionSelect').value;
+            const checkedBoxes = document.querySelectorAll('.batch-tag-checkbox:checked');
+            const selectedExistingTags = Array.from(checkedBoxes).map(cb => cb.value);
+
+            const newTagsRaw = document.getElementById('batchNewTagsInput').value;
+            const newTags = newTagsRaw.split(',').map(t => t.trim()).filter(t => t.length > 0);
+
+            const tagsToProcess = Array.from(new Set([...selectedExistingTags, ...newTags]));
+
+            if (tagsToProcess.length === 0) {
+                showToast("Please select or enter at least one tag.", true);
+                return;
+            }
+
+            dictionary.forEach(item => {
+                if (selectedEntryIds.has(item.id)) {
+                    let currentTags = new Set(item.tags || []);
+                    if (action === 'add') {
+                        tagsToProcess.forEach(tag => currentTags.add(tag));
+                    } else if (action === 'remove') {
+                        tagsToProcess.forEach(tag => currentTags.delete(tag));
+                    }
+                    item.tags = Array.from(currentTags);
+                }
+            });
+
+            saveToLocalStorage();
+            renderDictionary();
+            closeBatchTagModal();
+            showToast(`Batch updated tags for ${selectedEntryIds.size} entries`);
+        }
+
         function createGridCardElement(item) {
+            const isSelected = selectedEntryIds.has(item.id);
             const card = document.createElement('div');
-            card.className = "bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-all cursor-pointer relative flex flex-col justify-between group";
+            card.className = `bg-white rounded-xl p-5 border ${isSelected ? 'border-vermilion-500 ring-2 ring-vermilion-500/20 bg-vermilion-50/10' : 'border-slate-200'} shadow-sm hover:shadow-md transition-all cursor-pointer relative flex flex-col justify-between group`;
             card.onclick = (e) => {
-                if (e.target.closest('button') || e.target.closest('.tag-chip')) return;
+                if (e.target.closest('button') || e.target.closest('.tag-chip') || e.target.closest('.batch-checkbox-area')) return;
                 openDetailModal(item.id);
             };
 
@@ -653,7 +820,14 @@
             card.innerHTML = `
                 <div>
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs text-slate-400 font-mono">${escapeHtml(item.romaji || '')}</span>
+                        <div class="flex items-center space-x-2">
+                            ${!CONFIG.readOnlyMode ? `
+                                <div class="batch-checkbox-area">
+                                    <input type="checkbox" ${isSelected ? 'checked' : ''} onclick="toggleEntrySelection('${item.id}', event)" class="rounded text-vermilion-500 focus:ring-vermilion-500 cursor-pointer">
+                                </div>
+                            ` : ''}
+                            <span class="text-xs text-slate-400 font-mono">${escapeHtml(item.romaji || '')}</span>
+                        </div>
                         ${!CONFIG.readOnlyMode ? `
                             <div class="opacity-0 group-hover:opacity-100 transition-opacity flex space-x-1">
                                 <button onclick="editEntry('${item.id}')" title="Edit" class="p-1 text-slate-400 hover:text-slate-700 rounded">
@@ -691,10 +865,11 @@
         }
 
         function createListRowElement(item) {
+            const isSelected = selectedEntryIds.has(item.id);
             const row = document.createElement('div');
-            row.className = "bg-white rounded-lg p-4 border border-slate-200 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group";
+            row.className = `bg-white rounded-lg p-4 border ${isSelected ? 'border-vermilion-500 ring-2 ring-vermilion-500/20 bg-vermilion-50/10' : 'border-slate-200'} shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group`;
             row.onclick = (e) => {
-                if (e.target.closest('button') || e.target.closest('.tag-chip')) return;
+                if (e.target.closest('button') || e.target.closest('.tag-chip') || e.target.closest('.batch-checkbox-area')) return;
                 openDetailModal(item.id);
             };
 
@@ -707,6 +882,11 @@
 
             row.innerHTML = `
                 <div class="flex items-center space-x-4">
+                    ${!CONFIG.readOnlyMode ? `
+                        <div class="batch-checkbox-area">
+                            <input type="checkbox" ${isSelected ? 'checked' : ''} onclick="toggleEntrySelection('${item.id}', event)" class="rounded text-vermilion-500 focus:ring-vermilion-500 cursor-pointer">
+                        </div>
+                    ` : ''}
                     <div class="min-w-[120px]">
                         ${item.kanji ? `<span class="text-lg font-bold text-slate-900 jp-font">${escapeHtml(item.kanji)}</span>` : ''}
                         <div class="text-xs text-slate-500 jp-font">${escapeHtml(item.kana || '')} (${escapeHtml(item.romaji || '')})</div>
@@ -891,7 +1071,6 @@
                 if (!line.trim()) return;
                 const cols = parseCSVLine(line);
 
-                // Skip header row if detected
                 if (index === 0 && cols[0].toLowerCase() === 'english' && cols[2].toLowerCase() === 'kana') {
                     return;
                 }
@@ -1170,6 +1349,7 @@
             if (CONFIG.readOnlyMode) return;
             if (confirm("Are you sure you want to delete this word entry?")) {
                 dictionary = dictionary.filter(item => item.id !== id);
+                selectedEntryIds.delete(id);
                 saveToLocalStorage();
                 renderDictionary();
                 showToast("Entry deleted");
