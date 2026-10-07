@@ -109,7 +109,7 @@
     "kanji": "聞く",
     "kana": "きく",
     "romaji": "kiku",
-    "english": "to listen; to hear (~o)",
+    "english": "to listen; to hear (~o), to ask (~ni)",
     "tags": [
       "Lesson 3",
       "u-verb",
@@ -199,7 +199,7 @@
     "kanji": "いる",
     "kana": "いる",
     "romaji": "iru",
-    "english": "(a person) is in ...; stays at ...",
+    "english": "(a person) is in ...; stays at ...; to exist (person, living thing)",
     "tags": [
       "Lesson 4",
       "ru-verb",
@@ -214,7 +214,7 @@
     "kanji": "ある",
     "kana": "ある",
     "romaji": "aru",
-    "english": "there is ...",
+    "english": "there is ... ;to exist (thing)",
     "tags": [
       "Lesson 4",
       "u-verb",
@@ -315,21 +315,6 @@
     "createdAt": 1791311891787
   },
   {
-    "id": "1791311891788",
-    "kanji": "聞く",
-    "kana": "きく",
-    "romaji": "kiku",
-    "english": "to ask (person ni)",
-    "tags": [
-      "Lesson 5",
-      "u-verb",
-      "verb"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311891788
-  },
-  {
     "id": "1791311891789",
     "kanji": "やる",
     "kana": "やる",
@@ -404,34 +389,6 @@
     "createdAt": 1791311879176
   },
   {
-    "id": "1791311879177",
-    "kanji": "半",
-    "kana": "はん",
-    "romaji": "han",
-    "english": "half",
-    "tags": [
-      "Lesson 1",
-      "time"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311879177
-  },
-  {
-    "id": "1791311879178",
-    "kanji": "二時半",
-    "kana": "にじはん",
-    "romaji": "niji han",
-    "english": "half past two",
-    "tags": [
-      "Lesson 1",
-      "time"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311879178
-  },
-  {
     "id": "1791311879179",
     "kanji": "今",
     "kana": "いま",
@@ -444,34 +401,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311879179
-  },
-  {
-    "id": "1791311879180",
-    "kanji": "〜時",
-    "kana": "〜じ",
-    "romaji": "...ji",
-    "english": "o'clock",
-    "tags": [
-      "Lesson 1",
-      "time"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311879180
-  },
-  {
-    "id": "1791311879181",
-    "kanji": "一時",
-    "kana": "いちじ",
-    "romaji": "ichiji",
-    "english": "one o'clock",
-    "tags": [
-      "Lesson 1",
-      "time"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311879181
   },
   {
     "id": "1791311879182",
@@ -768,20 +697,6 @@
     "createdAt": 1791311879202
   },
   {
-    "id": "1791311879203",
-    "kanji": "〜時間",
-    "kana": "〜じかん",
-    "romaji": "... jikan",
-    "english": "... hours",
-    "tags": [
-      "Lesson 4",
-      "time"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311879203
-  },
-  {
     "id": "1791311879204",
     "kanji": "誕生日",
     "kana": "たんじょうび",
@@ -1020,7 +935,7 @@
     "kanji": "あそこ",
     "kana": "あそこ",
     "romaji": "asoko",
-    "english": "over there",
+    "english": "over there (far from speaker)",
     "tags": [
       "Lesson 2",
       "place"
@@ -1034,7 +949,7 @@
     "kanji": "そこ",
     "kana": "そこ",
     "romaji": "soko",
-    "english": "there",
+    "english": "there (close to speaker)",
     "tags": [
       "Lesson 2",
       "place"
@@ -1494,20 +1409,6 @@
     "createdAt": 1791311799306
   },
   {
-    "id": "1791311799307",
-    "kanji": "〜さん",
-    "kana": "〜さん",
-    "romaji": "...san",
-    "english": "Mr./Ms. ...",
-    "tags": [
-      "Lesson 1",
-      "people"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311799307
-  },
-  {
     "id": "1791311799308",
     "kanji": "お父さん",
     "kana": "おとうさん",
@@ -1590,20 +1491,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311799313
-  },
-  {
-    "id": "1791311799314",
-    "kanji": "〜人",
-    "kana": "〜じん",
-    "romaji": "...jin",
-    "english": "... people",
-    "tags": [
-      "Lesson 1",
-      "people"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311799314
   },
   {
     "id": "1791311799315",
@@ -1958,19 +1845,6 @@
     "createdAt": 1791311775456
   },
   {
-    "id": "1791311775457",
-    "kanji": "〜番",
-    "kana": "〜ばん",
-    "romaji": "...ban",
-    "english": "number ...",
-    "tags": [
-      "Lesson 1"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775457
-  },
-  {
     "id": "1791311775458",
     "kanji": "政治",
     "kana": "せいじ",
@@ -2036,32 +1910,6 @@
     "createdAt": 1791311775462
   },
   {
-    "id": "1791311775463",
-    "kanji": "〜語",
-    "kana": "〜ご",
-    "romaji": "...go",
-    "english": "... language",
-    "tags": [
-      "Lesson 1"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775463
-  },
-  {
-    "id": "1791311775464",
-    "kanji": "〜歳",
-    "kana": "〜さい",
-    "romaji": "...sai",
-    "english": "... years old",
-    "tags": [
-      "Lesson 1"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775464
-  },
-  {
     "id": "1791311775465",
     "kanji": "英語",
     "kana": "えいご",
@@ -2086,19 +1934,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311775466
-  },
-  {
-    "id": "1791311775467",
-    "kanji": "（〜を）ください",
-    "kana": "（〜を）ください",
-    "romaji": "(... o) kudasai",
-    "english": "Please give me ...",
-    "tags": [
-      "Lesson 2"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775467
   },
   {
     "id": "1791311775468",
@@ -2144,7 +1979,7 @@
     "kanji": "あの",
     "kana": "あの",
     "romaji": "ano",
-    "english": "that ... (over there)",
+    "english": "that ... (over there) (far from speaker)",
     "tags": [
       "Lesson 2"
     ],
@@ -2170,26 +2005,13 @@
     "kanji": "あれ",
     "kana": "あれ",
     "romaji": "are",
-    "english": "that one (over there)",
+    "english": "that one (over there) (far from speaker)",
     "tags": [
       "Lesson 2"
     ],
     "notes": "",
     "sentences": [],
     "createdAt": 1791311775473
-  },
-  {
-    "id": "1791311775474",
-    "kanji": "じゃあ",
-    "kana": "じゃあ",
-    "romaji": "jaa",
-    "english": "then ...; if that is the case",
-    "tags": [
-      "Lesson 2"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775474
   },
   {
     "id": "1791311775475",
@@ -2218,19 +2040,6 @@
     "createdAt": 1791311775476
   },
   {
-    "id": "1791311775477",
-    "kanji": "いらっしゃいませ",
-    "kana": "いらっしゃいませ",
-    "romaji": "irasshaimase",
-    "english": "Welcome (to our store).",
-    "tags": [
-      "Lesson 2"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775477
-  },
-  {
     "id": "1791311775478",
     "kanji": "どの",
     "kana": "どの",
@@ -2255,32 +2064,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311775479
-  },
-  {
-    "id": "1791311775480",
-    "kanji": "（〜を）おねがいします",
-    "kana": "（〜を）おねがいします",
-    "romaji": "(... o) onegaishimasu",
-    "english": "... please.",
-    "tags": [
-      "Lesson 2"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775480
-  },
-  {
-    "id": "1791311775481",
-    "kanji": "〜円",
-    "kana": "〜えん",
-    "romaji": "... en",
-    "english": "... yen",
-    "tags": [
-      "Lesson 2"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775481
   },
   {
     "id": "1791311775482",
@@ -2333,19 +2116,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311775485
-  },
-  {
-    "id": "1791311775486",
-    "kanji": "〜ぐらい",
-    "kana": "〜ぐらい",
-    "romaji": "... gurai",
-    "english": "about (approximate measurement)",
-    "tags": [
-      "Lesson 4"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775486
   },
   {
     "id": "1791311775487",
@@ -2413,19 +2183,6 @@
     "createdAt": 1791311775491
   },
   {
-    "id": "1791311775492",
-    "kanji": "〜と",
-    "kana": "〜と",
-    "romaji": "... to",
-    "english": "together with (a person); and",
-    "tags": [
-      "Lesson 4"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775492
-  },
-  {
     "id": "1791311775493",
     "kanji": "どうして",
     "kana": "どうして",
@@ -2437,19 +2194,6 @@
     "notes": "",
     "sentences": [],
     "createdAt": 1791311775493
-  },
-  {
-    "id": "1791311775494",
-    "kanji": "〜枚",
-    "kana": "〜まい",
-    "romaji": "... mai",
-    "english": "counter for flat objects",
-    "tags": [
-      "Lesson 5"
-    ],
-    "notes": "",
-    "sentences": [],
-    "createdAt": 1791311775494
   },
   {
     "id": "1791311775495",
